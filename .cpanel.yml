@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=./../../public_html/
+    - rsync -av --progress ./ $DEPLOYPATH --exclude .git
+    - chmod 755 ./../../public_html/;
