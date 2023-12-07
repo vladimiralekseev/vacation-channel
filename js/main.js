@@ -1,40 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let splide = new Splide('.js-main-slider', {
-        perPage: 3,
-        rewind: true,
-    });
-    splide.on('resize', function () {
-        let perPage = $(window).width() > 1383 ? 3 : 2
-        if ($(window).width() < 558) {
-            perPage = 1;
-        }
-        splide.options = {
-            perPage: perPage,
-        };
-    });
-    splide.mount();
-
-    let attractionSlider = new Splide('.js-attraction-slider', {
-        perPage: perPageCount(),
-        rewind: true,
-    });
-    attractionSlider.on('resize', function () {
-        attractionSlider.options = {
+    if ($('.js-main-slider').length) {
+        let splide = new Splide('.js-main-slider', {
+            perPage: 3,
+            rewind: true,
+        });
+        splide.on('resize', function () {
+            let perPage = $(window).width() > 1383 ? 3 : 2
+            if ($(window).width() < 558) {
+                perPage = 1;
+            }
+            splide.options = {
+                perPage: perPage,
+            };
+        });
+        splide.mount();
+    }
+    if ($('.js-attraction-slider').length) {
+        let attractionSlider = new Splide('.js-attraction-slider', {
             perPage: perPageCount(),
-        };
-    });
-    attractionSlider.mount();
-
-    let foodSlider = new Splide('.js-food-slider', {
-        perPage: perPageCount(),
-        rewind: true,
-    });
-    foodSlider.on('resize', function () {
-        foodSlider.options = {
+            rewind: true,
+        });
+        attractionSlider.on('resize', function () {
+            attractionSlider.options = {
+                perPage: perPageCount(),
+            };
+        });
+        attractionSlider.mount();
+    }
+    if ($('.js-food-slider').length) {
+        let foodSlider = new Splide('.js-food-slider', {
             perPage: perPageCount(),
-        };
-    });
-    foodSlider.mount();
+            rewind: true,
+        });
+        foodSlider.on('resize', function () {
+            foodSlider.options = {
+                perPage: perPageCount(),
+            };
+        });
+        foodSlider.mount();
+    }
 });
 
 let perPageCount = function () {
