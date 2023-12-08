@@ -15,6 +15,9 @@ use Yii;
  * @property string $youtube_code
  * @property string|null $description
  * @property int|null $category_id
+ * @property int $main
+ * @property int $main_slider
+ * @property int $main_page
  * @property string|null $created_at
  * @property string|null $updated_at
  *
@@ -37,7 +40,7 @@ class _source_Video extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'code', 'status', 'order', 'youtube_code'], 'required'],
-            [['status', 'order', 'category_id'], 'integer'],
+            [['status', 'order', 'category_id', 'main', 'main_slider', 'main_page'], 'integer'],
             [['description'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'code', 'youtube_code'], 'string', 'max' => 256],
@@ -59,6 +62,9 @@ class _source_Video extends \yii\db\ActiveRecord
             'youtube_code' => 'Youtube Code',
             'description' => 'Description',
             'category_id' => 'Category ID',
+            'main' => 'Main',
+            'main_slider' => 'Main Slider',
+            'main_page' => 'Main Page',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];

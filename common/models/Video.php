@@ -12,6 +12,15 @@ class Video extends _source_Video
     public const STATUS_ACTIVE   = 1;
     public const STATUS_INACTIVE = 0;
 
+    public const MAIN_NO = 0;
+    public const MAIN_YES = 1;
+
+    public const MAIN_SLIDER_NO = 0;
+    public const MAIN_SLIDER_YES = 1;
+
+    public const MAIN_PAGE_NO = 0;
+    public const MAIN_PAGE_YES = 1;
+
     public function behaviors(): array
     {
         return [

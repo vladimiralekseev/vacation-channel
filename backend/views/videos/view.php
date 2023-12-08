@@ -60,6 +60,18 @@ $this->params['breadcrumbs'][] = $this->title;
                             'label'  => 'Category',
                             'value'  => $model->category->name ?? null
                         ],
+                        [
+                            'label'  => 'Display as the main video',
+                            'value'  => $model->main ? 'Yes' : 'No',
+                        ],
+                        [
+                            'label'  => 'Display in the main slider on the main page',
+                            'value'  => $model->main_slider ? 'Yes' : 'No',
+                        ],
+                        [
+                            'label'  => 'Display on the main page',
+                            'value'  => $model->main_page ? 'Yes' : 'No',
+                        ],
                         'description',
                         'created_at',
                         'updated_at',

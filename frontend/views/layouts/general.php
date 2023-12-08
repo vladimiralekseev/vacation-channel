@@ -29,7 +29,7 @@ $this->beginPage() ?><!DOCTYPE html>
 <?php $this->beginBody() ?>
 <div class="wrapper-main">
     <?= $this->render('header') ?>
-    <main>
+    <main class="pt-3">
         <?= $content ?>
     </main>
     <?= $this->render('footer') ?>

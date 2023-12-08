@@ -31,8 +31,11 @@ use yii\helpers\Html;
     <?= $form->field($model, 'category_id')
         ->dropDownList(ArrayHelper::map(Category::find()->all(), 'id', 'name'), ['prompt' => '--Select Item--'])
         ->label('Category') ?>
+    <?= $form->field($model, 'main')->checkbox()->label('Display as the main video') ?>
+    <?= $form->field($model, 'main_slider')->checkbox()->label('Display in the main slider on the main page') ?>
+    <?= $form->field($model, 'main_page')->checkbox()->label('Display on the main page') ?>
 
-    <?= $form->field($model, 'description')->textarea() ?>
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
     <?php /*= $this->render(
         '../components/upload-file',
         [

@@ -12,28 +12,28 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-frontend',
-    'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'id'                  => 'app-frontend',
+    'basePath'            => dirname(__DIR__),
+    'bootstrap'           => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'components' => [
-        'request' => [
+    'components'          => [
+        'request'      => [
             'csrfParam' => '_csrf-frontend',
         ],
-        'user' => [
-            'identityClass' => 'common\models\User',
+        'user'         => [
+            'identityClass'   => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+            'identityCookie'  => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
-        'session' => [
+        'session'      => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
-        'log' => [
+        'log'          => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
+            'targets'    => [
                 [
-                    'class' => \yii\log\FileTarget::class,
+                    'class'  => \yii\log\FileTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],
@@ -61,9 +61,11 @@ return [
             'showScriptName'  => false,
             'suffix'          => '/',
             'rules'           => [
-                '/' => 'site/index',
+                '/'                       => 'site/index',
+                '/<code:[\w\d\-]+>'       => 'category/detail',
+                '/video/<code:[\w\d\-]+>' => 'video/detail',
             ]
         ],
     ],
-    'params' => $params,
+    'params'              => $params,
 ];

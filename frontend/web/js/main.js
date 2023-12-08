@@ -15,18 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         splide.mount();
     }
-    if ($('.js-attraction-slider').length) {
-        let attractionSlider = new Splide('.js-attraction-slider', {
-            perPage: perPageCount(),
-            rewind: true,
-        });
-        attractionSlider.on('resize', function () {
-            attractionSlider.options = {
-                perPage: perPageCount(),
-            };
-        });
-        attractionSlider.mount();
-    }
     if ($('.js-food-slider').length) {
         let foodSlider = new Splide('.js-food-slider', {
             perPage: perPageCount(),

@@ -1,3 +1,11 @@
+<?php
+
+use common\models\Category;
+use yii\helpers\Url;
+
+/** @var Category[] $categories */
+$categories = Category::find()->orderBy('order')->all();
+?>
 <header>
     <div class="fixed">
         <div class="float-end pt-2 menu-main-right">
@@ -12,15 +20,18 @@
             <span class="icon icon-x"></span>
         </a>
         <a href="/" class="logo">
-            <img src="img/logo.png" alt="Ibranson"/>
+            <img src="/img/logo.png" alt="Ibranson"/>
         </a>
         <div id="menu-general" class="menu-general menu-general-control-is-close">
             <ul class="menu-main">
-                <li class="active"><a href="#">Featured</a></li>
-                <li><a href="#">Attractions</a></li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Shows</a></li>
-                <li><a href="#">Shopping</a></li>
+                <li class="active"><a href="#search-block">Featured</a></li>
+                <?php foreach ($categories as $category) { ?>
+                    <li>
+                        <a href="<?= Url::to(['category/detail', 'code' => $category->code]) ?>">
+                            <?= $category->name ?>
+                        </a>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

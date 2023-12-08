@@ -15,7 +15,7 @@ use yii\widgets\Pjax;
 /**
  * @var View               $this
  * @var ActiveDataProvider $dataProvider
- * @var VideoSearch           $searchModel
+ * @var VideoSearch        $searchModel
  */
 
 $this->title = 'Videos';
@@ -76,6 +76,30 @@ $this->params['breadcrumbs'][] = $this->title;
                         'name',
                         'code',
                         'youtube_code',
+                        [
+                            'label'     => 'Main Video',
+                            'attribute' => 'main',
+                            'value'     => static function (Video $model) {
+                                return $model->main ? 'Yes' : 'No';
+                            },
+                            'filter'    => [0 => 'No', 1 => 'Yes'],
+                        ],
+                        [
+                            'label'     => 'Main Slider',
+                            'attribute' => 'main_slider',
+                            'value'     => static function (Video $model) {
+                                return $model->main_slider ? 'Yes' : 'No';
+                            },
+                            'filter'    => [0 => 'No', 1 => 'Yes'],
+                        ],
+                        [
+                            'label'     => 'Main Page',
+                            'attribute' => 'main_page',
+                            'value'     => static function (Video $model) {
+                                return $model->main_page ? 'Yes' : 'No';
+                            },
+                            'filter'    => [0 => 'No', 1 => 'Yes'],
+                        ],
                         [
                             'class'        => StatusColumn::class,
                             'attribute'    => 'status',

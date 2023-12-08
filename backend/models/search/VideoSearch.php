@@ -11,7 +11,7 @@ class VideoSearch extends Video
     public function rules(): array
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'main', 'main_slider', 'main_page'], 'integer'],
             [['name'], 'string'],
         ];
     }
@@ -41,6 +41,9 @@ class VideoSearch extends Video
         $query->andFilterWhere(
             [
                 'id' => $this->id,
+                'main' => $this->main,
+                'main_slider' => $this->main_slider,
+                'main_page' => $this->main_page,
             ]
         );
 
