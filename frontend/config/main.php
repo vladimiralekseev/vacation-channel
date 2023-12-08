@@ -61,9 +61,9 @@ return [
             'showScriptName'  => false,
             'suffix'          => '/',
             'rules'           => [
-                '/'                       => 'site/index',
-                '/<code:[\w\d\-]+>'       => 'category/detail',
-                '/video/<code:[\w\d\-]+>' => 'video/detail',
+                '/'                                   => 'site/index',
+                '/<code:[\w\d\-]+>'                   => 'category/detail',
+                '/<sCode:[\w\d\-]+>/<code:[\w\d\-]+>' => 'video/detail',
             ]
         ],
     ],

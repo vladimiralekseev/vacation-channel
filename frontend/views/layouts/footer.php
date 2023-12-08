@@ -5,7 +5,7 @@
                 <div class="arrow"></div>
                 <span class="icon icon-phone"></span>
                 <span class="text-label mx-1 mx-xxl-3">Phone</span>
-                <span class="phone-number d-xxl-inline d-md-block">(417) 294-6505</span>
+                <a href="tel:4172946505" class="phone-number d-xxl-inline d-md-block">(417) 294-6505</a>
             </div>
             <div class="text-center lines">
                 <span class="icon icon-like"></span>

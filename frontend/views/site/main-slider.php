@@ -17,7 +17,9 @@ use yii\helpers\Url;
 
                         <li class="splide__slide">
                             <a style="background-image:url('https://i.ytimg.com/vi/<?= $video->youtube_code ?>/hqdefault.jpg')"
-                               class="img" href="<?= Url::to(['video/detail', 'code' => $video->code]) ?>">
+                               class="img" href="<?= Url::to(
+                                       ['video/detail', 'code' => $video->code, 'sCode' => $video->category->code]
+                            ) ?>">
                             </a>
                         </li>
                     <?php } ?>

@@ -1,6 +1,7 @@
 <?php
 
 use common\models\Category;
+use yii\helpers\Url;
 
 /**
  * @var Category $category
@@ -17,4 +18,16 @@ $this->title = $category->name;
                aria-required="true" aria-invalid="true">
         <p class="help-block help-block-error"></p>
     </div>
+</div>
+
+<div class="video-list">
+    <?php foreach ($category->videos as $video) { ?>
+        <?php $link = Url::to(['video/detail', 'code' => $video->code]); ?>
+        <div class="video-item">
+            <a class="img" href="<?= $link ?>"
+               style="background-image:url('https://i.ytimg.com/vi/<?= $video->youtube_code ?>/hqdefault.jpg')"></a>
+            <a href="<?= $link ?>" class="item-name"><?= $video->name ?></a>
+            <a href="<?= $link ?>" class="btn btn-third">View details</a>
+        </div>
+    <?php } ?>
 </div>

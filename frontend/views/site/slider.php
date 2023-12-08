@@ -21,7 +21,9 @@ use yii\helpers\Url;
             <div class="splide__track">
                 <ul class="splide__list">
                     <?php foreach ($videos as $video) { ?>
-                    <?php $link = Url::to(['video/detail', 'code' => $video->code]); ?>
+                        <?php $link = Url::to(
+                            ['video/detail', 'code' => $video->code, 'sCode' => $video->category->code]
+                        ); ?>
                         <li class="splide__slide">
                             <a class="img" href="<?= $link ?>"
                                style="background-image:url('https://i.ytimg.com/vi/<?= $video->youtube_code ?>/hqdefault.jpg')"></a>
