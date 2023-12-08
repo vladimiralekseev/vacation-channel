@@ -19,7 +19,8 @@ class CategoryController extends Controller
         /**
          * @var Category $video
          */
-        $category = Category::find()->where(['code' => $code])->one();
+        $category = Category::find()->where(['code' => $code])
+            ->one();
 
         if (!$category) {
             throw new NotFoundHttpException();

@@ -5,15 +5,16 @@ use yii\helpers\Url;
 
 /** @var Category[] $categories */
 $categories = Category::find()->orderBy('order')->all();
+
 ?>
 <header>
     <div class="fixed">
         <div class="float-end pt-2 menu-main-right">
-            <a href="#" class="btn btn-third me-1 d-none d-sm-inline-block">
+            <a href="https://ibranson.com/" target="_blank" class="btn btn-third me-1 d-none d-sm-inline-block">
                 <span class="d-block d-xl-none">Shows</span>
                 <span class="d-none d-xl-inline">Latest Show Schedules</span>
             </a>
-            <a href="#" class="btn btn-primary d-none d-sm-inline-block">Contact us</a>
+            <a href="mailto:contact@tvcbranson.com" class="btn btn-primary d-none d-sm-inline-block">Contact us</a>
         </div>
         <a id="menu-up-control" class="menu-up-control menu-up-control-is-close">
             <span class="icon icon-menu"></span>
@@ -24,9 +25,13 @@ $categories = Category::find()->orderBy('order')->all();
         </a>
         <div id="menu-general" class="menu-general menu-general-control-is-close">
             <ul class="menu-main">
-                <li class="active"><a href="#search-block">Featured</a></li>
+                <li <?php if ($this->context->id === 'site' && $this->context->action->id === 'index') {
+                    ?>class="active"<?php } ?>><a
+                            href="/#search-block">Featured</a></li>
                 <?php foreach ($categories as $category) { ?>
-                    <li>
+                    <li <?php if ($this->context->id === 'category' && $this->context->actionParams['code'] ===
+                    $category->code) { ?>class="active"<?php }
+                    ?>>
                         <a href="<?= Url::to(['category/detail', 'code' => $category->code]) ?>">
                             <?= $category->name ?>
                         </a>

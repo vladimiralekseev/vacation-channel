@@ -22,8 +22,7 @@
                 <span class="icon icon-email"></span>
                 <span class="text-label mx-1 mx-xxl-3">E-mail</span>
                 <a href="mailto:contact@tvcbranson.com"
-                   class="text-white phone-number d-xxl-inline d-md-block">contact@tvcbranson
-                    .com</a>
+                   class="text-white phone-number d-xxl-inline d-md-block">contact@tvcbranson.com</a>
             </div>
         </div>
     </div>
@@ -33,7 +32,7 @@
                 <a href="#" class="me-3">Children's Programming</a>
                 <a href="#" class="me-3">EOE Statement</a>
                 <a href="#" class="me-3">FCC</a>
-                <a href="#" class="me-3">Contact</a>
+                <a href="mailto:contact@tvcbranson.com" class="me-3">Contact</a>
                 <a href="#">Adoration Parade</a>
             </div>
             <div class="col-xl-4 mb-5">
