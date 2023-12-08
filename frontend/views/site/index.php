@@ -34,6 +34,7 @@
             </div>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">
+            <div id="ytplayer"></div>
             <iframe class="youtube" src="https://www.youtube.com/embed/r-DS6PzFnkg?si=WHX35YfDslmp_ZGX"
                     height="250"
                     title="YouTube video player" frameborder="0"

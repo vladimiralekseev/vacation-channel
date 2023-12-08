@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap',
     ];
     public $js = [
+        'https://www.youtube.com/player_api',
         'js/splide.min.js',
         'js/main.js',
     ];

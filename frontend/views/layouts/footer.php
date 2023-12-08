@@ -13,7 +13,9 @@
                 <span class="d-xxl-inline d-md-block">
                         <span class="icon icon-facebook-circle me-2"></span>
                         <span class="icon icon-instagram me-2"></span>
-                        <span class="icon icon-youtube"></span>
+                        <a href="https://www.youtube.com/@TheVacationChannel/videos" target="_blank">
+                            <span class="icon icon-youtube"></span>
+                        </a>
                     </span>
             </div>
             <div class="text-center text-md-end">

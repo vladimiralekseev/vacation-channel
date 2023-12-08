@@ -11,6 +11,14 @@ use yii\widgets\Menu;
         <?php
         $menu = [
             ['label' => 'Content', 'options' => ['class' => 'header']],
+            [
+                'label' => '<span class="fa fa-dashboard"></span> ' . 'Categories',
+                'url'   => ['/categories']
+            ],
+            [
+                'label' => '<span class="fa fa-dashboard"></span> ' . 'Videos',
+                'url'   => ['/videos']
+            ],
             ['label' => 'Settings', 'options' => ['class' => 'header']],
             [
                 'label' => '<span class="fa fa-dashboard"></span> ' . 'Change own password',

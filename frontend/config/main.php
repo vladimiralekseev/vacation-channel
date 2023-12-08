@@ -56,14 +56,14 @@ return [
                 ]
             ]
         ],
-        /*
-        'urlManager' => [
+        'urlManager'   => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
+            'showScriptName'  => false,
+            'suffix'          => '/',
+            'rules'           => [
+                '/' => 'site/index',
+            ]
         ],
-        */
     ],
     'params' => $params,
 ];
