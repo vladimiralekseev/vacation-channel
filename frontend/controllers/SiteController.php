@@ -8,12 +8,22 @@ use Yii;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
+use yii\web\ErrorAction;
 
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+    public function actions(): array
+    {
+        return [
+            'error'   => [
+                'class' => ErrorAction::class,
+            ],
+        ];
+    }
+
     /**
      * Displays homepage.
      *
