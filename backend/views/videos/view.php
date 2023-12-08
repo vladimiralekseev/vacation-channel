@@ -72,6 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'label'  => 'Display on the main page',
                             'value'  => $model->main_page ? 'Yes' : 'No',
                         ],
+                        'link',
                         'description',
                         'created_at',
                         'updated_at',

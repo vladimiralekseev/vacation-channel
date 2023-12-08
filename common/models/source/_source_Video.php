@@ -20,6 +20,7 @@ use Yii;
  * @property int $main_page
  * @property string|null $created_at
  * @property string|null $updated_at
+ * @property string|null $link
  *
  * @property Category $category
  */
@@ -43,7 +44,7 @@ class _source_Video extends \yii\db\ActiveRecord
             [['status', 'order', 'category_id', 'main', 'main_slider', 'main_page'], 'integer'],
             [['description'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
-            [['name', 'code', 'youtube_code'], 'string', 'max' => 256],
+            [['name', 'code', 'youtube_code', 'link'], 'string', 'max' => 256],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::class, 'targetAttribute' => ['category_id' => 'id']],
         ];
     }
@@ -67,6 +68,7 @@ class _source_Video extends \yii\db\ActiveRecord
             'main_page' => 'Main Page',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'link' => 'Link',
         ];
     }
 
