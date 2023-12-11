@@ -13,9 +13,9 @@ use yii\helpers\Url;
 <?php if ($category && $videos) { ?>
     <div class="section-slider" id="section-<?= $category->code ?>">
         <?php if ($showMore) { ?>
-            <a href="<?= $category->code ?>"
+            <a href="<?= Url::to(['category/detail', 'code' => $category->code]) ?>"
                class="section-slider-btn btn btn-secondary d-none d-sm-inline-block">More</a>
-            <a href="<?= $category->code ?>" class="section-slider-name"><?= $category->name ?></a>
+            <a href="<?= Url::to(['category/detail', 'code' => $category->code]) ?>" class="section-slider-name"><?= $category->name ?></a>
         <?php } ?>
         <section class="js-<?= $category->code ?>-slider splide">
             <div class="splide__track">

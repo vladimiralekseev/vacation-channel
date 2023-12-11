@@ -37,7 +37,7 @@
             </div>
             <div class="col-xl-4 mb-5">
                 <div class="text-center text-xl-end copyright">
-                    ©2023 The Vacation Channel. All Rights Reserved.
+                    ©<?= (new DateTime())->format('Y')?> The Vacation Channel. All Rights Reserved.
                 </div>
             </div>
         </div>

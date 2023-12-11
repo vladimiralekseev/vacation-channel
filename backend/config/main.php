@@ -31,11 +31,11 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
-        ],
+//        'user' => [
+//            'identityClass' => 'common\models\User',
+//            'enableAutoLogin' => true,
+//            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+//        ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
@@ -62,7 +62,6 @@ return [
         ),
         'user'         => [
             'class'         => UserConfig::class,
-
             // Comment this if you don't want to record user logins
             'on afterLogin' => static function ($event) {
                 UserVisitLog::newVisitor($event->identity->id);
