@@ -27,23 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         foodSlider.mount();
     }
-    // const ytplayer = document.getElementById("movie_player");
-    // console.log(ytplayer.getCurrentTime())
 });
-
-//
-// let player;
-// function onYouTubePlayerAPIReady() {
-//     player = new YT.Player('ytplayer', {
-//         height: '360',
-//         width: '640',
-//         videoId: 'r-DS6PzFnkg'
-//     });
-// }
-// window.onclick = () => {
-//     console.log(player);
-//     alert(player.playerInfo.currentTime);
-// }
 
 let perPageCount = function () {
     let perPage = $(window).width() > 1383 ? 4 : 3;

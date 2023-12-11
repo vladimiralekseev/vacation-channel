@@ -16,12 +16,14 @@ $this->title = $video->name;
     <div class="row">
         <div class="col-lg-8">
             <div class="video">
-                <iframe id="movie_player" class="youtube" src="https://www.youtube.com/embed/<?= $video->youtube_code ?>"
-                        title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen>
-                </iframe></div>
+                <iframe id="ytplayer" type="text/html" width="640" height="390"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        src="https://www.youtube.com/embed/<?= $video->youtube_code ?>?enablejsapi=1&autoplay=1"
+                        frameborder="0"></iframe>
+            </div>
         </div>
         <div class="col-lg-4">
-            <div class="time">Branson Vacation Channel — 00:55</div>
+            <div class="time">Branson Vacation Channel — <span id="youtube-duration"></span></div>
             <div class="description">
                 <?= !empty($video->description) ? $video->description : $video->name ?>
             </div>
@@ -41,7 +43,5 @@ $this->title = $video->name;
         ]
     ) ?>
 <?php } ?>
-<?php //$this->registerJsFile('https://www.youtube.com/player_api') ?>
-<?php //$this->registerJsFile('/js/player-youtube.js') ?>
-<?php //https://codepen.io/ya3ya6/pen/wvKdqaY?editors=1010 ?>
-
+<?php $this->registerJsFile('https://www.youtube.com/player_api') ?>
+<?php $this->registerJsFile('/js/player-youtube.js') ?>

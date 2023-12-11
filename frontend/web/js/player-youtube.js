@@ -1,17 +1,13 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const ytplayer = document.getElementById('movie_player');
-    let player;
-    console.log(222)
-    window.onclick = () => {
-        console.log(player);
-        alert(player.playerInfo.currentTime);
-    }
-});
+let player;
 function onYouTubePlayerAPIReady() {
-    console.log(1111)
     player = new YT.Player('ytplayer', {
-        height: '360',
-        width: '640',
-        videoId: 'r-DS6PzFnkg'
+        events: {
+            'onReady': onPlayerReady
+        }
     });
+}
+function onPlayerReady() {
+    const youtubeDuration = document.getElementById("youtube-duration");
+    youtubeDuration.innerHTML = new Date(player.playerInfo.duration * 1000).toISOString().substring(14, 19);
+    player.playVideo()
 }
