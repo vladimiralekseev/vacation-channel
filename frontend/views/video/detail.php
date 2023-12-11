@@ -15,12 +15,10 @@ $this->title = $video->name;
 <div class="details-block">
     <div class="row">
         <div class="col-lg-8">
-            <div class="video">
-                <iframe id="ytplayer" type="text/html" width="640" height="390"
+            <div class="video"><iframe id="ytplayer" type="text/html" width="640" height="390"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         src="https://www.youtube.com/embed/<?= $video->youtube_code ?>?enablejsapi=1&autoplay=1"
-                        frameborder="0"></iframe>
-            </div>
+                        frameborder="0"></iframe></div>
         </div>
         <div class="col-lg-4">
             <div class="time">Branson Vacation Channel — <span id="youtube-duration"></span></div>
