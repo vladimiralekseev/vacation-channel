@@ -63,6 +63,7 @@ return [
             'rules'           => [
                 '/'                                   => 'site/index',
                 '/<code:[\w\d\-]+>'                   => 'category/detail',
+                '/<code:[\w\d\-]+>/search'            => 'category/search',
                 '/<sCode:[\w\d\-]+>/<code:[\w\d\-]+>' => 'video/detail',
             ]
         ],
