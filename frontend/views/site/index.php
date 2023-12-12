@@ -15,7 +15,7 @@ use common\models\Video;
             <div class="site-name">Branson, Missouri&nbsp;TV</div>
             <div class="row">
                 <div class="col-md-auto mt-1 mb-3 mb-lg-5">
-                    <a class="btn btn-secondary">Explore more</a>
+                    <a class="btn btn-secondary" href="#search-block">Explore more</a>
                 </div>
                 <div class="col mb-3 mb-lg-5">
                     <span class="">
