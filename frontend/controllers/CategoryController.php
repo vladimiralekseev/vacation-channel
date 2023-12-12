@@ -47,7 +47,7 @@ class CategoryController extends Controller
     public function actionSearch($code): string
     {
         /**
-         * @var Category $video
+         * @var Category $category
          */
         $category = Category::find()->where(['code' => $code])
             ->one();

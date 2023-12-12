@@ -62,6 +62,7 @@ return [
             'suffix'          => '/',
             'rules'           => [
                 '/'                                   => 'site/index',
+                '/search-on-main'                     => 'site/search',
                 '/<code:[\w\d\-]+>'                   => 'category/detail',
                 '/<code:[\w\d\-]+>/search'            => 'category/search',
                 '/<sCode:[\w\d\-]+>/<code:[\w\d\-]+>' => 'video/detail',

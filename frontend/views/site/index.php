@@ -1,13 +1,11 @@
 <?php
 
-use common\models\Category;
 use common\models\Video;
 
 /**
- * @var Video      $mainVideo
- * @var Video[]    $mainSliderVideo
- * @var Video[]    $mainPageVideo
- * @var Category[] $categories
+ * @var Video     $mainVideo
+ * @var Video[]   $mainSliderVideo
+ * @var Video[][] $groupVideo
  */
 
 ?>
@@ -38,22 +36,9 @@ use common\models\Video;
         </div>
     </div>
 </div>
-<div class="search-main" id="search-block">
-    <span class="icon icon-search"></span>
-    <div class="form-group field-contactform-name required has-error">
-        <input type="text" id="contactform-name" placeholder="Search video ..." class="form-control"
-               name="ContactForm[name]"
-               aria-required="true" aria-invalid="true">
-        <p class="help-block help-block-error"></p>
-    </div>
+<?= $this->render('search-on-main', compact('searchForm')) ?>
+<div class="js-video-list">
+    <?= $this->render('video-group-list', compact('groupVideo')) ?>
 </div>
-<?php foreach ($categories as $category) { ?>
-    <?= $this->render(
-        'slider',
-        [
-            'category' => $category,
-            'videos'   => $mainPageVideo[$category->id] ?? [],
-            'showMore' => true,
-        ]
-    ) ?>
-<?php } ?>
+<?php $this->registerJsFile('/js/main-search.js') ?>
+<?php $this->registerJs('mainSearch.init();') ?>

@@ -180,6 +180,7 @@ footer .contacts .lines:before {right:0;}
 .search-main .icon {position:absolute;top:23px;left:0;font-size:30px;}
 .search-main .spinner-border {display:none;font-size:15px;width:25px;height:25px;margin-top:7px;}
 .search-main .spinner-border-show {display:block;}
+.search-main .form-group {margin-right:40px;}
 
 .section-slider {padding:0 0 0;margin:0 0 80px;}
 .section-slider section {margin-right:-20px;}

@@ -11,13 +11,13 @@ use yii\helpers\Url;
  */
 ?>
 <?php if ($category && $videos) { ?>
-    <div class="section-slider" id="section-<?= $category->code ?>">
+    <div class="section-slider js-section-slider" id="section-<?= $category->code ?>">
         <?php if ($showMore) { ?>
             <a href="<?= Url::to(['category/detail', 'code' => $category->code]) ?>"
                class="section-slider-btn btn btn-secondary d-none d-sm-inline-block">More</a>
             <a href="<?= Url::to(['category/detail', 'code' => $category->code]) ?>" class="section-slider-name"><?= $category->name ?></a>
         <?php } ?>
-        <section class="js-<?= $category->code ?>-slider splide">
+        <section class="js-<?= $category->code ?>-slider splide" id="<?= $category->code ?>-slider">
             <div class="splide__track">
                 <ul class="splide__list">
                     <?php foreach ($videos as $video) { ?>
@@ -35,22 +35,4 @@ use yii\helpers\Url;
             </div>
         </section>
     </div>
-
-    <?php $this->registerJs(
-        "
-    if ($('.js-" . $category->code . "-slider').length) {
-        let attractionSlider = new Splide('.js-" . $category->code . "-slider', {
-            perPage: perPageCount(),
-            rewind: true,
-        });
-        attractionSlider.on('resize', function () {
-            attractionSlider.options = {
-                perPage: perPageCount(),
-            };
-        });
-        attractionSlider.mount();
-    }
-"
-    ) ?>
-
 <?php } ?>

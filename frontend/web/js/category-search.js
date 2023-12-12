@@ -1,5 +1,13 @@
 const categorySearch = {
+    searchTimeoutId: null,
     init: function () {
+        let _self = this
+        $('#category-search input').on('keyup', function () {
+            window.clearTimeout(_self.searchTimeoutId)
+            _self.searchTimeoutId = window.setTimeout(() => {
+                $('#category-search').submit();
+            }, 600)
+        });
         $('#category-search').on('submit', function() {
             $('.js-loader').addClass('spinner-border-show')
             $.ajax({

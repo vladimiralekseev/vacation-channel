@@ -15,18 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         splide.mount();
     }
-    if ($('.js-food-slider').length) {
-        let foodSlider = new Splide('.js-food-slider', {
-            perPage: perPageCount(),
-            rewind: true,
-        });
-        foodSlider.on('resize', function () {
-            foodSlider.options = {
-                perPage: perPageCount(),
-            };
-        });
-        foodSlider.mount();
-    }
 });
 
 let perPageCount = function () {
