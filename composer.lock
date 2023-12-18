@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04ecf2f3c8a9904ce11d2930ea3e68fe",
+    "content-hash": "a7b11bd7f4a1d975f61a22a9a7846b0f",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1249,6 +1249,61 @@
                 "source": "https://github.com/MarcusSchwarz/lesserphp/tree/v0.5.5"
             },
             "time": "2021-03-10T17:56:57+00:00"
+        },
+        {
+            "name": "mihaildev/yii2-ckeditor",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MihailDev/yii2-ckeditor.git",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MihailDev/yii2-ckeditor/zipball/d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mihaildev\\ckeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mihail",
+                    "email": "mihail.kucher@gmail.com",
+                    "homepage": "https://github.com/MihailDev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 CKEditor",
+            "homepage": "https://github.com/MihailDev/yii2-ckeditor",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "wysiwyg",
+                "yii"
+            ],
+            "support": {
+                "issues": "https://github.com/MihailDev/yii2-ckeditor/issues",
+                "source": "https://github.com/MihailDev/yii2-ckeditor/tree/master"
+            },
+            "time": "2014-11-19T22:04:08+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3117,16 +3172,16 @@
         },
         {
             "name": "yiisoft/yii2-authclient",
-            "version": "2.2.14",
+            "version": "2.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-authclient.git",
-                "reference": "6bd4b4efc60db2b31bb957a473442900c704857e"
+                "reference": "a11cbb065a2424c25f9dc0d0df6852d605d869b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/6bd4b4efc60db2b31bb957a473442900c704857e",
-                "reference": "6bd4b4efc60db2b31bb957a473442900c704857e",
+                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/a11cbb065a2424c25f9dc0d0df6852d605d869b2",
+                "reference": "a11cbb065a2424c25f9dc0d0df6852d605d869b2",
                 "shasum": ""
             },
             "require": {
@@ -3186,11 +3241,11 @@
                 "yii2"
             ],
             "support": {
-                "forum": "http://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
                 "issues": "https://github.com/yiisoft/yii2-authclient/issues",
                 "source": "https://github.com/yiisoft/yii2-authclient",
-                "wiki": "http://www.yiiframework.com/wiki/"
+                "wiki": "https://www.yiiframework.com/wiki/"
             },
             "funding": [
                 {
@@ -3206,7 +3261,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-18T17:23:56+00:00"
+            "time": "2023-12-16T15:14:16+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",

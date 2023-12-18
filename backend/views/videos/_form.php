@@ -2,6 +2,7 @@
 
 use common\models\Category;
 use common\models\Video;
+use mihaildev\ckeditor\CKEditor;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -35,8 +36,12 @@ use yii\helpers\Html;
     <?= $form->field($model, 'main')->checkbox()->label('Display as the main video') ?>
     <?= $form->field($model, 'main_slider')->checkbox()->label('Display in the main slider on the main page') ?>
     <?= $form->field($model, 'main_page')->checkbox()->label('Display on the main page') ?>
-
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->widget(CKEditor::class,[
+        'editorOptions' => [
+            'preset' => 'basic',
+            'inline' => false,
+        ],
+    ]); ?>
     <?php /*= $this->render(
         '../components/upload-file',
         [
