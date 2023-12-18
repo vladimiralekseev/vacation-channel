@@ -50,6 +50,7 @@ class SearchForm extends Model
             if ($this->category_id) {
                 $query->andWhere(['category_id' => $this->category_id]);
             }
+            $query->orderBy('order');
             return $query->all();
         }
         return null;

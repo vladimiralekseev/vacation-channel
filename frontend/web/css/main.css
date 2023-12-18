@@ -76,7 +76,9 @@ h6 {font:12px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 
 .wrapper-main {height:100%;display:flex;flex-direction:column;}
 header {padding:25px 0;}
-main {flex: 1;}
+main {flex: 1;padding-bottom:50px;}
+
+img {max-width: 100%;}
 
 header {background:var(--c-black);}
 header .logo {float:left;margin:0 30px 0 0;}
@@ -236,3 +238,6 @@ footer .contacts .lines:before {right:0;}
 @media (max-width: 768px) {
     .video-list .video-item {width:100%;margin:0 0 40px;}
 }
+
+.programming-list .item {max-width:650px;background:linear-gradient(90deg, #09B3B0 0%, #09A8C7 100%);border-radius:10px;padding:25px;margin:0 auto 25px;}
+.programming-img img {border-radius:10px;}

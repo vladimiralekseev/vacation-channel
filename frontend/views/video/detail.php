@@ -1,6 +1,7 @@
 <?php
 
 use common\models\Video;
+use yii\helpers\Url;
 
 /**
  * @var Video $video
@@ -9,16 +10,20 @@ use common\models\Video;
 $this->title = $video->name;
 ?>
 <div class="mb-3 d-none d-lg-block">
-    <a href="#" class="link-back"><span class="icon"></span><?= $video->category->name ?? '' ?></a>
+    <a href="<?= Url::to(['category/detail', 'code' => $video->category->code]) ?>" class="link-back">
+        <span class="icon"></span><?= $video->category->name ?? '' ?>
+    </a>
 </div>
 <h1><?= $video->name ?></h1>
 <div class="details-block">
     <div class="row">
         <div class="col-lg-8">
-            <div class="video"><iframe id="ytplayer" type="text/html" width="640" height="390"
+            <div class="video">
+                <iframe id="ytplayer" type="text/html" width="640" height="390"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         src="https://www.youtube.com/embed/<?= $video->youtube_code ?>?enablejsapi=1&autoplay=1"
-                        frameborder="0"></iframe></div>
+                        frameborder="0"></iframe>
+            </div>
         </div>
         <div class="col-lg-4">
             <div class="time">Branson Vacation Channel — <span id="youtube-duration"></span></div>
@@ -41,5 +46,7 @@ $this->title = $video->name;
         ]
     ) ?>
 <?php } ?>
+<?php $this->registerJsFile('/js/category-slider.js') ?>
 <?php $this->registerJsFile('https://www.youtube.com/player_api') ?>
 <?php $this->registerJsFile('/js/player-youtube.js') ?>
+<?php $this->registerJs('initSliders()') ?>

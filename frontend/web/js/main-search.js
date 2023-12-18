@@ -17,7 +17,7 @@ const mainSearch = {
                 success: function (result) {
                     $('.js-video-list').html(result);
                     $('.js-loader').removeClass('spinner-border-show');
-                    _self.initSliders();
+                    initSliders();
                 }
             });
             return false;
@@ -26,21 +26,6 @@ const mainSearch = {
             $('#main-search-block').submit();
             return false;
         })
-        _self.initSliders();
-    },
-    initSliders() {
-        $('.js-section-slider').each(function () {
-            console.log($(this).find('section').attr('id'))
-            let attractionSlider = new Splide('#' + $(this).find('section').attr('id'), {
-                perPage: perPageCount(),
-                rewind: true,
-            });
-            attractionSlider.on('resize', function () {
-                attractionSlider.options = {
-                    perPage: perPageCount(),
-                };
-            });
-            attractionSlider.mount();
-        });
+        initSliders();
     }
 }

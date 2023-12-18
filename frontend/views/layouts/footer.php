@@ -1,3 +1,8 @@
+<?php
+
+use yii\helpers\Url;
+
+?>
 <footer>
     <div class="fixed mb-5">
         <div class="contacts d-md-flex">
@@ -29,11 +34,12 @@
     <div class="fixed">
         <div class="row">
             <div class="col-xl-8 text-center text-xl-start mb-3">
-                <a href="#" class="me-3">Children's Programming</a>
-                <a href="#" class="me-3">EOE Statement</a>
-                <a href="#" class="me-3">FCC</a>
+                <a href="<?= Url::to(['programming/index']) ?>" class="me-3">Children's Programming</a>
+                <a href="https://publicfiles.fcc.gov/tv-profile/KBNS-CD/more-public-files" target="_blank" class="me-3">
+                    FCC
+                </a>
                 <a href="mailto:contact@tvcbranson.com" class="me-3">Contact</a>
-                <a href="#">Adoration Parade</a>
+                <a href="/communityservices/branson-adoration-parade-2023/">Adoration Parade</a>
             </div>
             <div class="col-xl-4 mb-5">
                 <div class="text-center text-xl-end copyright">

@@ -35,8 +35,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $mainVideo = Video::find()->where(['main' => Video::MAIN_YES])->orderBy(new Expression('rand()'))->one();
-        $mainSliderVideo = Video::find()->where(['main_slider' => Video::MAIN_SLIDER_YES])->all();
-        $groupVideo = Video::find()->where(['main_page' => Video::MAIN_PAGE_YES])->joinWith(['category'])->all();
+        $mainSliderVideo = Video::find()->where(['main_slider' => Video::MAIN_SLIDER_YES])->orderBy('order')->all();
+        $groupVideo = Video::find()->where(['main_page' => Video::MAIN_PAGE_YES])->joinWith(['category'])->orderBy('order')->all();
         $groupVideo = ArrayHelper::index($groupVideo, null, 'category_id');
         $searchForm = new SearchForm();
         return $this->render(
@@ -58,7 +58,7 @@ class SiteController extends Controller
             $groupVideo = ArrayHelper::index($videos, null, 'category_id');
             return $this->renderPartial('video-group-list', compact('groupVideo'));
         }
-        $videos = Video::find()->where(['main_page' => Video::MAIN_PAGE_YES])->joinWith(['category'])->all();
+        $videos = Video::find()->where(['main_page' => Video::MAIN_PAGE_YES])->joinWith(['category'])->orderBy('order')->all();
         $groupVideo = ArrayHelper::index($videos, null, 'category_id');
         return $this->renderPartial('video-group-list', compact('groupVideo'));
     }

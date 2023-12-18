@@ -40,5 +40,6 @@ use common\models\Video;
 <div class="js-video-list">
     <?= $this->render('video-group-list', compact('groupVideo')) ?>
 </div>
+<?php $this->registerJsFile('/js/category-slider.js') ?>
 <?php $this->registerJsFile('/js/main-search.js') ?>
 <?php $this->registerJs('mainSearch.init();') ?>
