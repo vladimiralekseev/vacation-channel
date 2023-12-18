@@ -41,7 +41,13 @@ $this->title = $video->name;
         '@frontend/views/site/slider',
         [
             'category' => $video->category,
-            'videos'   => $video->category->videos,
+            'videos'   => $video->category->videos ? array_filter(
+                $video->category->videos,
+                static function ($v, $k) use ($video) {
+                    return $v->id !== $video->id;
+                },
+                ARRAY_FILTER_USE_BOTH
+            ) : [],
             'showMore' => false,
         ]
     ) ?>
