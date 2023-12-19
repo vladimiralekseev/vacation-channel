@@ -39,7 +39,6 @@ use yii\helpers\Url;
                     FCC
                 </a>
                 <a href="mailto:contact@tvcbranson.com" class="me-3">Contact</a>
-                <a href="/communityservices/branson-adoration-parade-2023/">Adoration Parade</a>
             </div>
             <div class="col-xl-4 mb-5">
                 <div class="text-center text-xl-end copyright">
