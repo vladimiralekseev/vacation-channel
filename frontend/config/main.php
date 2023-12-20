@@ -63,6 +63,7 @@ return [
             'rules'           => [
                 '/'                                   => 'site/index',
                 '/search-on-main'                     => 'site/search',
+                '/about'                              => 'site/about',
                 '/programming'                        => 'programming/index',
                 '/c/<code:[\w\d\-]+>'                 => 'category/detail',
                 '/<code:[\w\d\-]+>/search'            => 'category/search',

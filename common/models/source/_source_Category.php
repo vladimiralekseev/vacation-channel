@@ -13,6 +13,7 @@ use Yii;
  * @property int $order
  * @property string|null $created_at
  * @property string|null $updated_at
+ * @property int $menu
  *
  * @property Video[] $videos
  */
@@ -33,7 +34,7 @@ class _source_Category extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'code', 'order'], 'required'],
-            [['order'], 'integer'],
+            [['order', 'menu'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'code'], 'string', 'max' => 256],
         ];
@@ -51,6 +52,7 @@ class _source_Category extends \yii\db\ActiveRecord
             'order' => 'Order',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'menu' => 'Menu',
         ];
     }
 

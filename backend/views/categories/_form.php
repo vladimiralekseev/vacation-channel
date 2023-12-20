@@ -24,6 +24,7 @@ use yii\helpers\Html;
 
     <?= $form->field($model, 'name')->textInput() ?>
     <?= $form->field($model, 'order')->textInput() ?>
+    <?= $form->field($model, 'menu')->checkbox()->label('Display in header') ?>
     <?php /*= $this->render(
         '../components/upload-file',
         [

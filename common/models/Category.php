@@ -9,6 +9,9 @@ use yii\db\Expression;
 
 class Category extends _source_Category
 {
+    public const MENU_ACTIVE   = 1;
+    public const MENU_INACTIVE = 0;
+
     public function behaviors(): array
     {
         return [
@@ -28,5 +31,20 @@ class Category extends _source_Category
                 'value'      => new Expression('NOW()'),
             ],
         ];
+    }
+
+    public static function getStatusList(): array
+    {
+        return [
+            self::MENU_ACTIVE   => 'Yes',
+            self::MENU_INACTIVE => 'No',
+        ];
+    }
+
+    public static function getStatusValue($val): string
+    {
+        $ar = self::getStatusList();
+
+        return $ar[$val] ?? $val;
     }
 }

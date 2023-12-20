@@ -39,6 +39,7 @@ use yii\helpers\Url;
                     FCC
                 </a>
                 <a href="mailto:contact@tvcbranson.com" class="me-3">Contact</a>
+                <a href="<?= Url::to(['site/about']) ?>" class="me-3">About us</a>
             </div>
             <div class="col-xl-4 mb-5">
                 <div class="text-center text-xl-end copyright">

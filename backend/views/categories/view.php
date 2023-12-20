@@ -50,6 +50,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         'id',
                         'name',
                         'code',
+                        [
+                            'attribute' => 'menu',
+                            'label' => 'Display in header',
+                            'value'     => Category::getStatusValue($model->menu),
+                        ],
                         'order',
                         'created_at',
                         'updated_at',

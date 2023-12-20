@@ -2,6 +2,7 @@
 
 use backend\models\search\CategorySearch;
 use common\models\Category;
+use webvimark\components\StatusColumn;
 use webvimark\extensions\GridPageSize\GridPageSize;
 use yii\data\ActiveDataProvider;
 use yii\grid\ActionColumn;
@@ -71,6 +72,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                 return Html::a($model->id, ['view', 'id' => $model->id], ['data-pjax' => 0]);
                             },
                             'format'    => 'raw',
+                        ],
+                        [
+                            'class'        => StatusColumn::class,
+                            'label' => 'Display in header',
+                            'attribute'    => 'menu',
+                            'optionsArray' => [
+                                [0, Category::getStatusValue(0), 'warning'],
+                                [1, Category::getStatusValue(1), 'success'],
+                            ],
                         ],
                         'name',
                         'code',

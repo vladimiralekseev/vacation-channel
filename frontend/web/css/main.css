@@ -3,6 +3,7 @@
     --c-white: #fff;
     --c-turquoise: #09B3B0;
     --c-gray: #555658;
+    --c-gray-light: #9ea0a3;
     --c-black: #000;
 }
 
@@ -37,7 +38,7 @@ input[type=checkbox]:disabled+label:before, input[type=radio]:disabled+label:bef
 input[type=checkbox]:checked:disabled+label:before {background:var(--c-gray-light-2);color:var(--c-gray-light);}
 input[type=radio]:checked:disabled+label:before {background:var(--c-gray-light);}
 */
-::placeholder {color:var(--c-gray)!important;}
+::placeholder {color:var(--c-gray-light)!important;}
 
 input::-ms-clear {display: none;}
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
@@ -121,6 +122,12 @@ footer .contacts .lines:before {right:0;}
 @media (max-width: 1400px) {
     footer .contacts .lines:before, footer .contacts .lines:after {display:none;}
 }
+
+.dropdown-menu-custom {position:relative;display:inline-block;}
+.dropdown-menu-custom .btn-list {position:absolute;display:none;background: var(--c-white);width:100%;border-radius:10px;}
+.dropdown-menu-custom .btn-list .btn {display:block;width:100%;}
+.dropdown-menu-custom:hover .btn-list {display:block;text-align:center;}
+.dropdown-menu-custom:hover .btn-list a {white-space:nowrap;}
 
 .main-block {background:url('../img/main-block-fon.png') no-repeat 50% 10%;background-size:contain;padding:30px 0 70px;}
 .main-block .site-name {font-size:64px;font-weight:700;}

@@ -4,16 +4,22 @@ use common\models\Category;
 use yii\helpers\Url;
 
 /** @var Category[] $categories */
-$categories = Category::find()->orderBy('order')->all();
+$categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderBy('order')->all();
 
 ?>
 <header>
     <div class="fixed">
         <div class="float-end pt-2 menu-main-right">
-            <a href="https://ibranson.com/" target="_blank" class="btn btn-third me-1 d-none d-sm-inline-block">
-                <span class="d-block d-xl-none">Shows</span>
-                <span class="d-none d-xl-inline">Latest Show Schedules</span>
-            </a>
+            <span class="dropdown-menu-custom me-1">
+                <a href="https://ibranson.com/" target="_blank" class="btn btn-third d-none d-sm-inline-block">
+                    <span class="d-block d-xl-none">Schedules</span>
+                    <span class="d-none d-xl-inline">Branson Schedules</span>
+                </a>
+                <span class="btn-list">
+                    <a href="https://ibranson.com/shows-in-branson-missouri/" target="_blank" class="btn btn-secondary">Shows</a>
+                    <a href="https://ibranson.com/branson-mo-attractions/" target="_blank" class="btn btn-secondary">Attractions</a>
+                </span>
+            </span>
             <a href="mailto:contact@tvcbranson.com" class="btn btn-primary d-none d-sm-inline-block">Contact us</a>
         </div>
         <a id="menu-up-control" class="menu-up-control menu-up-control-is-close">
