@@ -16,8 +16,8 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
                     <span class="d-none d-xl-inline">Branson Schedules</span>
                 </a>
                 <span class="btn-list">
-                    <a href="https://ibranson.com/shows-in-branson-missouri/" target="_blank" class="btn btn-secondary">Shows</a>
-                    <a href="https://ibranson.com/branson-mo-attractions/" target="_blank" class="btn btn-secondary">Attractions</a>
+                    <a href="https://ibranson.com/shows-in-branson-missouri/?open-print-schedule=1" target="_blank" class="btn btn-secondary">Shows</a>
+                    <a href="https://ibranson.com/branson-mo-attractions/?open-print-schedule=1" target="_blank" class="btn btn-secondary">Attractions</a>
                 </span>
             </span>
             <a href="mailto:contact@tvcbranson.com" class="btn btn-primary d-none d-sm-inline-block">Contact us</a>
