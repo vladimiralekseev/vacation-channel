@@ -64,6 +64,7 @@ h6 {font:12px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 .btn-link {color:var(--c-turquoise);font-weight:normal;}
 
 .cursor-pointer {cursor:pointer;}
+.cursor-default {cursor:default;}
 
 .fixed {max-width:1660px;margin:0 auto;padding:0 20px;}
 

@@ -11,10 +11,10 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
     <div class="fixed">
         <div class="float-end pt-2 menu-main-right">
             <span class="dropdown-menu-custom me-1">
-                <a href="https://ibranson.com/" target="_blank" class="btn btn-third d-none d-sm-inline-block">
+                <span class="btn btn-third d-none d-sm-inline-block cursor-default">
                     <span class="d-block d-xl-none">Schedules</span>
                     <span class="d-none d-xl-inline">Branson Schedules</span>
-                </a>
+                </span>
                 <span class="btn-list">
                     <a href="https://ibranson.com/shows-in-branson-missouri/?open-print-schedule=1" target="_blank" class="btn btn-secondary">Shows</a>
                     <a href="https://ibranson.com/branson-mo-attractions/?open-print-schedule=1" target="_blank" class="btn btn-secondary">Attractions</a>
