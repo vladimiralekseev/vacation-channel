@@ -113,7 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'label' => 'Category',
                             'attribute' => 'category_id',
                             'value'     => static function (Video $model) {
-                                return $model->category->name;
+                                return $model->category->name ?? null;
                             },
                         ],
                         [
