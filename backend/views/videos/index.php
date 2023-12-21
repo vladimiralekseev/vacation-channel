@@ -110,6 +110,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         'order',
                         [
+                            'label' => 'Category',
+                            'attribute' => 'category_id',
+                            'value'     => static function (Video $model) {
+                                return $model->category->name;
+                            },
+                        ],
+                        [
                             'class'          => ActionColumn::class,
                             'contentOptions' => ['style' => 'width:70px; text-align:center;'],
                         ],

@@ -28,7 +28,7 @@ class CategorySearch extends Category
                 ],
                 'sort'       => [
                     'defaultOrder' => [
-                        'name' => SORT_ASC,
+                        'order' => SORT_ASC,
                     ],
                 ],
             ]
