@@ -43,6 +43,16 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
                         </a>
                     </li>
                 <?php } ?>
+                <li class="d-inline-block d-lg-none">
+                    <a href="https://ibranson.com/shows-in-branson-missouri/" target="_blank">
+                        Shows Schedules
+                    </a>
+                </li>
+                <li class="d-inline-block d-lg-none">
+                    <a href="https://ibranson.com/branson-mo-attractions/" target="_blank">
+                        Attractions Schedules
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
