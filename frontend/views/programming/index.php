@@ -1,21 +1,18 @@
 <div class="programming-list">
     <div class="item">
-        <h2>Телевизионный гид Брэнсона</h2>
-        <div>Новости, ориентированные на посетителей, отвечают на наиболее часто задаваемые вопросы посетителей 24 часа
-            в сутки.
+        <h2>Branson TV Guide</h2>
+        <div>Visitor-oriented news answers the most frequently asked questions from visitors 24 hours a day.
         </div>
     </div>
     <div class="item">
-        <h2>Погода</h2>
-        <div>Мы держим посетителей и сообщество в курсе местной погоды в течение дня. Сводки погоды предоставляются
-            каждые 30 минут.
+        <h2>Weather</h2>
+        <div>We keep visitors and the community updated on local weather throughout the day. Weather summaries are provided every 30 minutes.
         </div>
     </div>
     <div class="item">
-        <h2>Детское программирование</h2>
-        <div>Специальные программы только для детей от 6 до 16 лет выходят в эфир каждый день с 15:00 до 16:00.</div>
+        <h2>Children's Programming</h2>
+        <div>Special programs exclusively for children aged 6 to 16 are broadcasted every day from 3:00 PM to 4:00 PM.</div>
     </div>
 </div>
 <div class="text-center programming-img">
-    <img src="/img/Q&Abillboard.jpg" alt="Q&amp;Abillboard.jpg"/>
 </div>
