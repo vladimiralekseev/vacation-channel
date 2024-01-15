@@ -16,12 +16,16 @@ use yii\helpers\Url;
                 <span class="icon icon-like"></span>
                 <span class="text-label mx-1 mx-xxl-3">Connect</span>
                 <span class="d-xxl-inline d-md-block">
+                    <a href="https://www.facebook.com/TheVacationChannel" target="_blank">
                         <span class="icon icon-facebook-circle me-2"></span>
+                    </a>
+                    <a href="https://www.instagram.com/thevacationchannelbranson?igsh=dmVvZ3YwdjF4MjZv" target="_blank">
                         <span class="icon icon-instagram me-2"></span>
-                        <a href="https://www.youtube.com/@TheVacationChannel/videos" target="_blank">
-                            <span class="icon icon-youtube"></span>
-                        </a>
-                    </span>
+                    </a>
+                    <a href="https://www.youtube.com/@TheVacationChannel" target="_blank">
+                        <span class="icon icon-youtube"></span>
+                    </a>
+                </span>
             </div>
             <div class="text-center text-md-end">
                 <span class="icon icon-email"></span>
@@ -49,3 +53,8 @@ use yii\helpers\Url;
         </div>
     </div>
 </footer>
+Instagram:
+
+Youtube:
+
+Facebook:
