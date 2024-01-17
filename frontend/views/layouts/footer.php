@@ -53,8 +53,3 @@ use yii\helpers\Url;
         </div>
     </div>
 </footer>
-Instagram:
-
-Youtube:
-
-Facebook:
