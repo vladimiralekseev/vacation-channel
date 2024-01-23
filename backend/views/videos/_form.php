@@ -30,6 +30,7 @@ use yii\helpers\Html;
     <?= $form->field($model, 'order')->textInput() ?>
     <?= $form->field($model, 'youtube_code')->textInput() ?>
     <?= $form->field($model, 'link')->textInput() ?>
+    <?= $form->field($model, 'link_name')->textInput() ?>
     <?= $form->field($model, 'category_id')
         ->dropDownList(ArrayHelper::map(Category::find()->all(), 'id', 'name'), ['prompt' => '--Select Item--'])
         ->label('Category') ?>

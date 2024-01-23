@@ -21,6 +21,7 @@ use Yii;
  * @property string|null $created_at
  * @property string|null $updated_at
  * @property string|null $link
+ * @property string|null $link_name
  *
  * @property Category $category
  */
@@ -45,6 +46,7 @@ class _source_Video extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'code', 'youtube_code', 'link'], 'string', 'max' => 256],
+            [['link_name'], 'string', 'max' => 128],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::class, 'targetAttribute' => ['category_id' => 'id']],
         ];
     }
@@ -69,6 +71,7 @@ class _source_Video extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'link' => 'Link',
+            'link_name' => 'Link Name',
         ];
     }
 

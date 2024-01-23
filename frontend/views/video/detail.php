@@ -30,8 +30,8 @@ $this->title = $video->name;
             <div class="description">
                 <?= !empty($video->description) ? $video->description : $video->name ?>
             </div>
-            <?php if ($video->link) { ?>
-                <a href="<?= $video->link ?>" target="_blank" class="btn btn-primary w-100">Buy now</a>
+            <?php if ($video->link && $video->link_name) { ?>
+                <a href="<?= $video->link ?>" target="_blank" class="btn btn-primary w-100"><?= $video->link_name ?></a>
             <?php } ?>
         </div>
     </div>

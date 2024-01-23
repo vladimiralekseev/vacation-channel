@@ -73,6 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'value'  => $model->main_page ? 'Yes' : 'No',
                         ],
                         'link',
+                        'link_name',
                         'description',
                         'created_at',
                         'updated_at',
