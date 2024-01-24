@@ -38,8 +38,12 @@ use yii\helpers\Url;
     <div class="fixed">
         <div class="row">
             <div class="col-xl-8 text-center text-xl-start mb-3">
-                <a href="mailto:contact@tvcbranson.com" class="me-3">Contact</a>
-                <a href="<?= Url::to(['site/about']) ?>" class="me-3">About us</a>
+                <a href="<?= Url::to(['programming/index']) ?>" class="me-3 text-nowrap">Children's Programming</a>
+                <a href="https://www.fcc.gov/" target="_blank" class="me-3 text-nowrap">
+                    <img src="/img/fcc-logo.png" alt="FCC" /> FCC
+                </a>
+                <a href="mailto:contact@tvcbranson.com" class="me-3 text-nowrap">Contact</a>
+                <a href="<?= Url::to(['site/about']) ?>" class="me-3 text-nowrap">About us</a>
             </div>
             <div class="col-xl-4 mb-5">
                 <div class="text-center text-xl-end copyright">
