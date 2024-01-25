@@ -24,6 +24,7 @@ use Yii;
  * @property string|null $link_name
  *
  * @property Category $category
+ * @property MetaData[] $metaDatas
  */
 class _source_Video extends \yii\db\ActiveRecord
 {
@@ -83,5 +84,15 @@ class _source_Video extends \yii\db\ActiveRecord
     public function getCategory()
     {
         return $this->hasOne(Category::class, ['id' => 'category_id']);
+    }
+
+    /**
+     * Gets query for [[MetaDatas]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMetaDatas()
+    {
+        return $this->hasMany(MetaData::class, ['video_id' => 'id']);
     }
 }

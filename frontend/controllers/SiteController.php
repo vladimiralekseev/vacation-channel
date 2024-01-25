@@ -2,21 +2,18 @@
 
 namespace frontend\controllers;
 
-use common\models\Category;
 use common\models\Video;
 use Exception;
 use frontend\models\forms\SearchForm;
 use Yii;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
-use yii\web\Controller;
 use yii\web\ErrorAction;
-use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     public function actions(): array
     {

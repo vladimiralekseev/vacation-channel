@@ -22,7 +22,7 @@ use yii\helpers\Url;
                 <ul class="splide__list">
                     <?php foreach ($videos as $video) { ?>
                         <?php $link = Url::to(
-                            ['video/detail', 'code' => $video->code, 'sCode' => $video->category->code]
+                            ['video/detail', 'videoCode' => $video->code, 'sCode' => $video->category->code]
                         ); ?>
                         <li class="splide__slide">
                             <a class="img" href="<?= $link ?>"

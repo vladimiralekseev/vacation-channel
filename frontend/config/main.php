@@ -67,7 +67,7 @@ return [
                 '/programming'                        => 'programming/index',
                 '/c/<code:[\w\d\-]+>'                 => 'category/detail',
                 '/<code:[\w\d\-]+>/search'            => 'category/search',
-                '/<sCode:[\w\d\-]+>/<code:[\w\d\-]+>' => 'video/detail',
+                '/<sCode:[\w\d\-]+>/<videoCode:[\w\d\-]+>' => 'video/detail',
             ]
         ],
     ],

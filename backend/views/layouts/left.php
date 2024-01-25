@@ -19,6 +19,10 @@ use yii\widgets\Menu;
                 'label' => '<span class="fa fa-dashboard"></span> ' . 'Videos',
                 'url'   => ['/videos']
             ],
+            [
+                'label'   => '<span class="fa fa-file-word-o"></span> Meta data',
+                'url'     => ['/meta-data/index'],
+            ],
             ['label' => 'Settings', 'options' => ['class' => 'header']],
             [
                 'label' => '<span class="fa fa-dashboard"></span> ' . 'Change own password',

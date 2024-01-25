@@ -9,7 +9,7 @@ use yii\helpers\Url;
 
 ?>
 <?php foreach ($videos as $video) { ?>
-    <?php $link = Url::to(['video/detail', 'code' => $video->code, 'sCode' => $video->category->code]); ?>
+    <?php $link = Url::to(['video/detail', 'videoCode' => $video->code, 'sCode' => $video->category->code]); ?>
     <div class="video-item">
         <a class="img" href="<?= $link ?>"
            style="background-image:url('https://i.ytimg.com/vi/<?= $video->youtube_code ?>/hqdefault.jpg')"></a>

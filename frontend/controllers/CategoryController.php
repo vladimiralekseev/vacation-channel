@@ -5,10 +5,9 @@ namespace frontend\controllers;
 use common\models\Category;
 use frontend\models\forms\SearchForm;
 use Yii;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-class CategoryController extends Controller
+class CategoryController extends BaseController
 {
     /**
      * @param $code

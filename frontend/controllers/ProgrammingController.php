@@ -2,9 +2,7 @@
 
 namespace frontend\controllers;
 
-use yii\web\Controller;
-
-class ProgrammingController extends Controller
+class ProgrammingController extends BaseController
 {
     public function actionIndex(): string
     {
