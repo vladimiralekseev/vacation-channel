@@ -2,6 +2,29 @@
 
 use common\models\Category;
 use yii\helpers\Url;
+use yii\web\View;
+
+$googleTagManagerIDs = Yii::$app->params['googleTagManager']['ids'] ?? [];
+if (!empty($googleTagManagerIDs)) {
+    $this->registerJsFile(
+        'https://www.googletagmanager.com/gtag/js?id=' . $googleTagManagerIDs[0],
+        ['position' => View::POS_HEAD, 'async' => true]
+    );
+    $gTagConfig = '';
+    foreach ($googleTagManagerIDs as $id) {
+        $gTagConfig .= "gtag('config', '$id');";
+    }
+    $this->registerJs(
+        "
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    " . $gTagConfig,
+        View::POS_HEAD
+    );
+}
+
+ //if (YII_ENV === "prod") {
 
 /** @var Category[] $categories */
 $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderBy('order')->all();
