@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use yii\web\View;
 
 $googleTagManagerIDs = Yii::$app->params['googleTagManager']['ids'] ?? [];
-if (!empty($googleTagManagerIDs)) {
+if (YII_ENV === 'prod' && !empty($googleTagManagerIDs)) {
     $this->registerJsFile(
         'https://www.googletagmanager.com/gtag/js?id=' . $googleTagManagerIDs[0],
         ['position' => View::POS_HEAD, 'async' => true]
