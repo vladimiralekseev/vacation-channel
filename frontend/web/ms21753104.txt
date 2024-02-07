@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "thevacationchannel.com",
+  "Id": "db285114-73b6-4473-b201-fcd1ed4e5590"
+}
