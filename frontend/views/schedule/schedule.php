@@ -85,7 +85,7 @@ use frontend\models\forms\PopupScheduleSearch;
                                 <?php foreach ($scheduleByDay as $it) {?>
                                     <tr>
                                         <td class="first-column">
-                                            <a href="#"><?= $it["name"]?></a>,
+                                            <a href="//ibranson.com<?= $it['url'] ?>"><?= $it['name'] ?></a>,
                                             <?php if($it["minAdultSpecial"]){?>
                                                 <span class="cost">$ <?=$it["minAdultSpecial"]?></span> <span class="cost strike">$ <?= $it["minAdult"]?></span> <span class="it-m"><span class="it-box">A</span></span>
                                             <?php } else if($it["minAdult"]) {?>
@@ -113,10 +113,10 @@ use frontend\models\forms\PopupScheduleSearch;
                                                             }
                                                             ?>
                                                             <?php if (!empty($row['any_time'])) {?>
-                                                                <div class="time"><a href="#"><?=
+                                                                <div class="time"><a href="//ibranson.com<?= $row['url'] ?>"><?=
                                                                         $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?>Any Time</span></a></div>
                                                             <?php } else {?>
-                                                                <div class="time <?= $color?>"><a href="#"><?= $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?><?= $d->format("h:i A")?></a></div>
+                                                                <div class="time <?= $color?>"><a href="//ibranson.com<?= $row['url'] ?>"><?= $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?><?= $d->format("h:i A")?></a></div>
                                                             <?php }?>
                                                         <?php }}?>
                                                 </td>
@@ -171,7 +171,7 @@ use frontend\models\forms\PopupScheduleSearch;
                             <td>
                                 <ul class="decor my-2">
                                     <?php foreach ($ar as $it) {?>
-                                    <li><a href="#"><?= $it["name"]?></a></li>
+                                    <li><a href="//ibranson.com<?= $it['url'] ?>"><?= $it['name'] ?></a></li>
                                     <?php }?>
                                 </ul>
                             </td>
