@@ -24,7 +24,7 @@ if (YII_ENV === 'prod' && !empty($googleTagManagerIDs)) {
     );
 }
 
- //if (YII_ENV === "prod") {
+//if (YII_ENV === "prod") {
 
 /** @var Category[] $categories */
 $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderBy('order')->all();
@@ -39,8 +39,8 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
                     <span class="d-none d-xl-inline">Branson Schedules</span>
                 </span>
                 <span class="btn-list">
-                    <a href="https://ibranson.com/shows-in-branson-missouri/?open-print-schedule=1" target="_blank" class="btn btn-secondary">Shows</a>
-                    <a href="https://ibranson.com/branson-mo-attractions/?open-print-schedule=1" target="_blank" class="btn btn-secondary">Attractions</a>
+                    <a href="<?= Url::to(['schedule/show']) ?>" class="btn btn-secondary">Shows</a>
+                    <a href="<?= Url::to(['schedule/attraction']) ?>" class="btn btn-secondary">Attractions</a>
                 </span>
             </span>
             <a href="mailto:contact@tvcbranson.com" class="btn btn-primary d-none d-sm-inline-block">Contact us</a>
@@ -67,12 +67,14 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
                     </li>
                 <?php } ?>
                 <li class="d-inline-block d-lg-none">
-                    <a href="https://ibranson.com/shows-in-branson-missouri/?open-print-schedule=1" target="_blank">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#satisfaction-guaranteed">
                         Shows Schedules
                     </a>
                 </li>
                 <li class="d-inline-block d-lg-none">
-                    <a href="https://ibranson.com/branson-mo-attractions/?open-print-schedule=1" target="_blank">
+                    <a href="https://ibranson.com/branson-mo-attractions/?open-print-schedule=1" target="_blank"
+                       onclick="$('#show-schedule').modal('show');return null;"
+                    >
                         Attractions Schedules
                     </a>
                 </li>

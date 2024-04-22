@@ -38,9 +38,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before {
-  content: "\61";
-}
 .icon-phone:before {
   content: "\62";
 }
@@ -62,9 +59,15 @@
 .icon-youtube:before {
   content: "\68";
 }
-.icon-menu:before {
-  content: "\69";
-}
 .icon-x:before {
   content: "\6a";
+}
+.icon-calendar:before {
+  content: "\6b";
+}
+.icon-search:before {
+  content: "\6c";
+}
+.icon-menu:before {
+  content: "\61";
 }

@@ -44,3 +44,17 @@ $('#menu-up-control').click(function () {
         $('header').removeClass('header-menu-is-open');
     }
 });
+//
+// let popupSizer = {
+//     init: function () {
+//         $('body').append('<style>.modal-dialog .scrollbar-inner {max-height:' + ($(window).height() - 200) + 'px;}</style>');
+//     }
+// }
+//
+// $(function () {
+//     try {
+//         $('.scrollbar-inner').scrollbar()
+//     } catch (e) {
+//     }
+//     popupSizer.init();
+// });
