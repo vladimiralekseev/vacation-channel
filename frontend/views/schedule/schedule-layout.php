@@ -14,12 +14,16 @@ $this->registerJs('schedule.init("' . $url . '")');
 
 $this->title = 'Attractions schedule';
 
+$this->registerJsFile('/js/jquery.scrollbar.min.js', ['depends' => [JqueryAsset::class, BootstrapAsset::class]]);
+$this->registerCssFile('/css/jquery.scrollbar.css');
 ?>
-<div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <div class="white-block">
-            <div class="schedule-filter">
+<div class="row d-flex flex-column flex-lg-row">
+    <div class="col-12 col-lg-2 order-1 order-lg-1 mb-3">
+        <div class="ad-example">Your ad can be here!</div>
+    </div>
+    <div class="col-12 col-lg-8 order-3 order-lg-2 mb-3">
+        <div class="white-block position-relative">
+            <div class="schedule-filter mb-2 mb-sm-0">
                 <div class="field field-datepicker">
                     <input name="date-from" type="text" class="form-control datepicker js-datepicker" autocomplete="off"
                            value="<?= date("m/d/Y") ?>"/>
@@ -30,6 +34,8 @@ $this->title = 'Attractions schedule';
             <div class="js-modal-content"></div>
         </div>
     </div>
-    <div class="col-2"></div>
+    <div class="col-12 col-lg-2 order-2 order-lg-3 mb-3">
+        <div class="ad-example">Your ad can be here!</div>
+    </div>
 </div>
 

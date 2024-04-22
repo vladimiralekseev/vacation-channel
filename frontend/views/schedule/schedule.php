@@ -11,9 +11,9 @@ use frontend\models\forms\PopupScheduleSearch;
 ?>
 <div class="popup-schedule">
     <div class="schedule-tab">
-        <div class="row">
-            <div class="col-5"></div>
-            <div class="col-5 text-end">
+        <div class="row row-small-padding">
+            <div class="col-5 d-none d-sm-block"></div>
+            <div class="col-8 col-sm-5 text-left text-sm-end">
                 <ul class="nav nav-tabs justify-content-center justify-content-sm-start" role="tablist">
                     <li role="presentation"><a <?php if ((int)Yii::$app->getRequest()->get('tab') === 0) {?>class="active"<?php
                         }?> data-bs-target="#weekly" aria-controls="weekly" role="tab" data-bs-toggle="tab">Weekly</a></li>
@@ -21,7 +21,7 @@ use frontend\models\forms\PopupScheduleSearch;
                         }?> data-bs-target="#daily" aria-controls="daily" role="tab" data-bs-toggle="tab">Daily</a></li>
                 </ul>
             </div>
-            <div class="col-2">
+            <div class="col-4 col-sm-2">
                 <a href="#" class="btn btn-primary w-100 btn-sm">Print</a>
             </div>
         </div>
@@ -31,21 +31,21 @@ use frontend\models\forms\PopupScheduleSearch;
 
                 <div class="scrollbar-inner">
 
-                    <div class="row my-3 pt-3 info">
-                        <div class="col-6 col-sm-4 text-center text-sm-start mb-3">
+                    <div class="row row-small-padding my-2 my-sm-3 pt-2 pt-sm-3 info">
+                        <div class="col-5 col-sm-4 text-center text-sm-start mb-2 mb-sm-3">
                             <b>Schedule for:</b><br>
-                            <div class="d-inline-block mt-2">
+                            <div class="d-inline-block mt-0 mt-sm-2">
                             <?= $Search->getDateTimeFrom()->format("m/d/Y")?> - <?= $Search->getDateTimeTo()->format
                                 ("m/d/Y")?>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-4 text-center mb-3">
+                        <div class="col-7 col-sm-4 text-center mb-2 mb-sm-3">
                             <b>Contact Phone:</b><br>
-                            <a href="tel:(417) 294-6505" class="text-black d-inline-block mt-2">
+                            <a href="tel:(417) 294-6505" class="text-black d-inline-block mt-0 mt-sm-2">
                                 <i class="icon icon-phone"></i> (417) 294-6505
                             </a>
                         </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-end mb-3">
+                        <div class="col-12 col-sm-4 text-center text-sm-end mb-2 mb-sm-3">
                             <b>Sponsored by iBranson:</b><br>
                             <a href="https://ibranson.com" target="_blank">
                                 <img src="/img/ib-logo-25y.png" alt="IBranson" class="logo" />
@@ -85,7 +85,7 @@ use frontend\models\forms\PopupScheduleSearch;
                                 <?php foreach ($scheduleByDay as $it) {?>
                                     <tr>
                                         <td class="first-column">
-                                            <a href="//ibranson.com<?= $it['url'] ?>"><?= $it['name'] ?></a>,
+                                            <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a>,
                                             <?php if($it["minAdultSpecial"]){?>
                                                 <span class="cost">$ <?=$it["minAdultSpecial"]?></span> <span class="cost strike">$ <?= $it["minAdult"]?></span> <span class="it-m"><span class="it-box">A</span></span>
                                             <?php } else if($it["minAdult"]) {?>
@@ -113,10 +113,10 @@ use frontend\models\forms\PopupScheduleSearch;
                                                             }
                                                             ?>
                                                             <?php if (!empty($row['any_time'])) {?>
-                                                                <div class="time"><a href="//ibranson.com<?= $row['url'] ?>"><?=
+                                                                <div class="time"><a href="<?= $row['url'] ?>" target="_blank"><?=
                                                                         $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?>Any Time</span></a></div>
                                                             <?php } else {?>
-                                                                <div class="time <?= $color?>"><a href="//ibranson.com<?= $row['url'] ?>"><?= $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?><?= $d->format("h:i A")?></a></div>
+                                                                <div class="time <?= $color?>"><a href="<?= $row['url'] ?>" target="_blank"><?= $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?><?= $d->format("h:i A")?></a></div>
                                                             <?php }?>
                                                         <?php }}?>
                                                 </td>
@@ -134,20 +134,20 @@ use frontend\models\forms\PopupScheduleSearch;
             {?>show active<?php }?>" id="daily">
 
                 <div class="scrollbar-inner">
-                    <div class="row my-3 pt-3 info">
-                        <div class="col-6 col-sm-4 text-center text-sm-start mb-3">
+                    <div class="row row-small-padding my-2 my-sm-3 pt-2 pt-sm-3 info">
+                        <div class="col-5 col-sm-4 text-center text-sm-start mb-2 mb-sm-3">
                             <b>Schedule for:</b><br>
-                            <div class="d-inline-block mt-2">
+                            <div class="d-inline-block mt-0 mt-sm-2">
                                 <?= $Search->getDateTimeFrom()->format("m/d/Y")?>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-4 text-center mb-3">
+                        <div class="col-7 col-sm-4 text-center mb-2 mb-sm-3">
                             <b>Contact Phone:</b><br>
-                            <a href="tel:(417) 294-6505" class="text-black d-inline-block mt-2">
+                            <a href="tel:(417) 294-6505" class="text-black d-inline-block mt-0 mt-sm-2">
                                 <i class="icon icon-phone"></i> (417) 294-6505
                             </a>
                         </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-end mb-3">
+                        <div class="col-12 col-sm-4 text-center text-sm-end mb-2 mb-sm-3">
                             <b>Sponsored by iBranson:</b><br>
                             <a href="https://ibranson.com" target="_blank">
                                 <img src="/img/ib-logo-25y.png" alt="IBranson" class="logo" />
@@ -171,7 +171,7 @@ use frontend\models\forms\PopupScheduleSearch;
                             <td>
                                 <ul class="decor my-2">
                                     <?php foreach ($ar as $it) {?>
-                                    <li><a href="//ibranson.com<?= $it['url'] ?>"><?= $it['name'] ?></a></li>
+                                    <li><a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a></li>
                                     <?php }?>
                                 </ul>
                             </td>

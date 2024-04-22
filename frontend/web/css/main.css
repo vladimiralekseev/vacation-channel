@@ -60,6 +60,33 @@ h6 {font:12px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 ul.decor li {list-style:none;}
 ul.decor li:before {display:inline-block;content:"";border-radius:10px;width:8px;height:8px;background:var(--c-turquoise);margin:0 10px 0 -20px;position:relative;top:-1px;}
 
+.row-small-padding, .row-small-padding .row {margin:0 -5px;}
+.row-small-padding .col-xs-1, .row-small-padding .col-md-1, .row-small-padding .col-1, .row-small-padding .col-lg-1,
+.row-small-padding .col-xs-2, .row-small-padding .col-md-2, .row-small-padding .col-2, .row-small-padding .col-lg-2,
+.row-small-padding .col-xs-3, .row-small-padding .col-md-3, .row-small-padding .col-3, .row-small-padding .col-lg-3,
+.row-small-padding .col-xs-4, .row-small-padding .col-md-4, .row-small-padding .col-4, .row-small-padding .col-lg-4,
+.row-small-padding .col-xs-5, .row-small-padding .col-md-5, .row-small-padding .col-5, .row-small-padding .col-lg-5,
+.row-small-padding .col-xs-6, .row-small-padding .col-md-6, .row-small-padding .col-6, .row-small-padding .col-lg-6,
+.row-small-padding .col-xs-7, .row-small-padding .col-md-7, .row-small-padding .col-7, .row-small-padding .col-lg-7,
+.row-small-padding .col-xs-8, .row-small-padding .col-md-8, .row-small-padding .col-8, .row-small-padding .col-lg-8,
+.row-small-padding .col-xs-9, .row-small-padding .col-md-9, .row-small-padding .col-9, .row-small-padding .col-lg-9,
+.row-small-padding .col-xs-10, .row-small-padding .col-md-10, .row-small-padding .col-10, .row-small-padding .col-lg-10,
+.row-small-padding .col-xs-11, .row-small-padding .col-md-11, .row-small-padding .col-11, .row-small-padding .col-lg-11,
+.row-small-padding .col-xs-12, .row-small-padding .col-md-12, .row-small-padding .col-12, .row-small-padding .col-lg-12,
+.row-small-padding .col-xl-1, .row-small-padding .col-sm-1,
+.row-small-padding .col-xl-2, .row-small-padding .col-sm-2,
+.row-small-padding .col-xl-3, .row-small-padding .col-sm-3,
+.row-small-padding .col-xl-4, .row-small-padding .col-sm-4,
+.row-small-padding .col-xl-5, .row-small-padding .col-sm-5,
+.row-small-padding .col-xl-6, .row-small-padding .col-sm-6,
+.row-small-padding .col-xl-7, .row-small-padding .col-sm-7,
+.row-small-padding .col-xl-8, .row-small-padding .col-sm-8,
+.row-small-padding .col-xl-9, .row-small-padding .col-sm-9,
+.row-small-padding .col-xl-10, .row-small-padding .col-sm-10,
+.row-small-padding .col-xl-11, .row-small-padding .col-sm-11,
+.row-small-padding .col-xl-12, .row-small-padding .col-sm-12
+{padding-right:5px;padding-left:5px;}
+
 .btn {border-radius:10px;border:1px solid transparent;font-weight:bold;}
 .btn-primary, .btn-primary:disabled {background:linear-gradient(90deg, #09B3B0 0%, #09A8C7 100%);}
 .btn-primary:hover {border-color:var(--c-white);background:linear-gradient(90deg, #09B3B0 50%, #09A8C7 113%);}
@@ -135,7 +162,7 @@ footer .contacts .lines:before {right:0;}
     footer .contacts .lines:before, footer .contacts .lines:after {display:none;}
 }
 
-.dropdown-menu-custom {position:relative;display:inline-block;}
+.dropdown-menu-custom {position:relative;display:inline-block;z-index:100;}
 .dropdown-menu-custom .btn-list {position:absolute;display:none;background: var(--c-white);width:100%;border-radius:10px;}
 .dropdown-menu-custom .btn-list .btn {display:block;width:100%;}
 .dropdown-menu-custom:hover .btn-list {display:block;text-align:center;}
@@ -170,10 +197,10 @@ footer .contacts .lines:before {right:0;}
     -moz-osx-font-smoothing: grayscale;
 }
 
-.arrow, .link-back .icon, .link-next .icon {border:2px solid var(--c-white);border-radius:50%;width:2em;height:2em;justify-content:center;align-items:center;display:flex;position:relative;}
+.arrow, .link-back .icon, .link-next .icon {border:2px solid var(--c-white);border-radius:50%;width:2em;height:2em;justify-content:center;align-items:center;display:inline-block;position:relative;}
 .arrow:before, .link-back .icon:before, .link-next .icon:before {display:block;content:"c";color:var(--c-white);position:relative;}
 .arrow {position:absolute;left:-80px;}
-.arrow:before, .link-next .icon:before {transform:rotate(180deg);}
+.arrow:before, .link-next .icon:before {transform:rotate(180deg);top:8px;text-align:center;}
 
 .splide__arrow--prev svg, .splide__arrow--next svg {display:none;}
 .splide__arrow--prev, .splide__arrow--next {background:none!important;border:2px solid var(--c-white)!important;}
@@ -227,7 +254,7 @@ footer .contacts .lines:before {right:0;}
 .link-back:hover {color:var(--c-turquoise);}
 .link-back:hover .icon, .link-back:hover .icon:before {border-color:var(--c-turquoise);color:var(--c-turquoise);}
 
-.link-next {display:flex;color:var(--c-white);}
+.link-next {color:var(--c-white);}
 .link-next .icon {margin:0 0 0 10px;top:-4px;}
 .link-next:hover {color:var(--c-turquoise);}
 .link-next:hover .icon, .link-next:hover .icon:before {border-color:var(--c-turquoise);color:var(--c-turquoise);}
@@ -294,7 +321,8 @@ footer .contacts .lines:before {right:0;}
 .schedule-filter .datepicker {color:var(--c-black);background:var(--c-gray-light2);cursor:pointer;font-size:15px;}
 .schedule-filter .icon {position:absolute;top:7px;right:10px;}
 
-.popup-schedule *:not(.btn) {color:var(--c-black);font-size:15px;}
+.popup-schedule * {font-size:15px;}
+.popup-schedule *:not(.btn) {color:var(--c-black);}
 .popup-schedule a:not(.btn) {color:var(--c-blue);}
 .popup-schedule .logo {height:32px;}
 .popup-schedule .info {border-top:1px solid var(--c-gray-light2);border-bottom:1px solid var(--c-gray-light2);}
@@ -323,5 +351,21 @@ footer .contacts .lines:before {right:0;}
 
 .nav-tabs {border:none;display:inline-block;background:var(--c-gray-light2);padding:4px;border-radius:8px;}
 .nav-tabs li {display:inline-block;}
-.nav-tabs a {display:inline-block;padding:4px 15px;border-radius:6px;color:var(--c-black)!important;cursor:pointer;font-size:16px;font-weight:bold;}
+.nav-tabs a {display:inline-block;padding:3px 15px;border-radius:6px;color:var(--c-black)!important;cursor:pointer;font-size:15px;font-weight:bold;}
 .nav-tabs a.active, .nav-tabs a:hover {background:var(--c-white);}
+
+.ad-example {background:rgba(255,255,255,0.2);height:500px;color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;text-align: center;padding:15px;}
+@media (max-width: 992px) {
+    .ad-example {height:120px;}
+}
+@media (max-width: 576px) {
+    .white-block {padding:7px;}
+    .popup-schedule *:not(.btn) {font-size: 13px;}
+    .print-schedule .it-m .square, .print-schedule .it-m .it-box {width:20px;height:20px;line-height:20px;border-radius:4px;}
+    .print-schedule td, .print-schedule th {padding:3px;}
+    .schedule-filter {
+        position: relative;
+        width: auto;
+        float: none;
+    }
+}

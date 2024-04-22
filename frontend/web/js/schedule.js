@@ -23,6 +23,7 @@ const schedule = {
             method: 'GET',
             success: function (result) {
                 $('.js-modal-content').html(result);
+                $('.scrollbar-inner').scrollbar();
             }
         });
     }

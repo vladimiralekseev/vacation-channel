@@ -35,7 +35,7 @@ use yii\helpers\Url;
             </div>
         </div>
     </div>
-    <div class="fixed">
+    <div class="fixed overflow-hidden">
         <div class="row">
             <div class="col-xl-8 text-center text-xl-start mb-3">
                 <a href="<?= Url::to(['programming/index']) ?>" class="me-3 text-nowrap">Children's Programming</a>

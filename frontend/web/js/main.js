@@ -56,5 +56,5 @@ $('#menu-up-control').click(function () {
 //         $('.scrollbar-inner').scrollbar()
 //     } catch (e) {
 //     }
-//     popupSizer.init();
+//     // popupSizer.init();
 // });
