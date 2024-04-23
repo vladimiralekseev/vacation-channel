@@ -58,7 +58,8 @@ h5 {font:14px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 h6 {font:12px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 
 ul.decor li {list-style:none;}
-ul.decor li:before {display:inline-block;content:"";border-radius:10px;width:8px;height:8px;background:var(--c-turquoise);margin:0 10px 0 -20px;position:relative;top:-1px;}
+ul.decor li:before, ul.decor li.color:before {display:inline-block;content:"";border-radius:10px;width:8px;height:8px;background:var(--c-black);margin:0 10px 0 -20px;position:relative;top:-1px;}
+ul.decor li.color:before {background:var(--c-turquoise);}
 
 .row-small-padding, .row-small-padding .row {margin:0 -5px;}
 .row-small-padding .col-xs-1, .row-small-padding .col-md-1, .row-small-padding .col-1, .row-small-padding .col-lg-1,
@@ -354,7 +355,7 @@ footer .contacts .lines:before {right:0;}
 .nav-tabs a {display:inline-block;padding:3px 15px;border-radius:6px;color:var(--c-black)!important;cursor:pointer;font-size:15px;font-weight:bold;}
 .nav-tabs a.active, .nav-tabs a:hover {background:var(--c-white);}
 
-.ad-example {background:rgba(255,255,255,0.2);height:500px;color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;text-align: center;padding:15px;}
+.ad-example {border-radius:8px;background:rgba(255,255,255,0.2);height:500px;color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;text-align: center;padding:15px;}
 @media (max-width: 992px) {
     .ad-example {height:120px;}
 }

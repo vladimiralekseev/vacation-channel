@@ -156,7 +156,14 @@ use frontend\models\forms\PopupScheduleSearch;
                     </div>
                 </div>
 
-                <div class="print-schedule">
+                <div class="main-print print-schedule">
+                    <div class="my-3">
+                        <span class="it-m mb-1"><span class="it-box">A</span> Adult</span>
+                        <span class="it-m mb-1"><span class="it-box">F</span> Family Pass</span>
+                        <span class="it-m mb-1">
+                            <span class="it-box"><span class="special-rate"></span></span> - Special Savings
+                        </span>
+                    </div>
                     <table class="table table-bordered table-header">
                         <thead>
                         <tr>
@@ -171,7 +178,15 @@ use frontend\models\forms\PopupScheduleSearch;
                             <td>
                                 <ul class="decor my-2">
                                     <?php foreach ($ar as $it) {?>
-                                    <li><a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a></li>
+                                    <li <?php if ($it['hasDiscount']) {?>class="color"<?php } ?>>
+                                        <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a>
+                                        <?php if ($it['hasAdult']) { ?>
+                                            <span class="it-m"><span class="it-box">A</span></span>
+                                        <?php }?>
+                                        <?php if ($it['hasFamilyPass']) { ?>
+                                            <span class="it-m"><span class="it-box">F</span></span>
+                                        <?php }?>
+                                    </li>
                                     <?php }?>
                                 </ul>
                             </td>

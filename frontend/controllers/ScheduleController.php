@@ -102,6 +102,26 @@ class ScheduleController extends BaseController
                 } else {
                     $it['order'] = 500;
                 }
+
+                $el = array_values(array_filter($scheduleByDay, static function($el) use ($it) {
+                    return (int)$it['id_external'] === (int)$el['id_external'];
+                }));
+                $el = $el ? $el[0] : null;
+                if ($el && !empty($el['availablePrices'])) {
+                    $adult = array_filter($el['availablePrices'], static function($el) {
+                        return $el['name'] === 'ADULT';
+                    });
+                    $it['hasAdult'] = !empty($adult);
+                    $familyPass = array_filter($el['availablePrices'], static function($el) {
+                        return stripos($el['name'], 'FAMILY PASS') !== false;
+                    });
+                    $it['hasFamilyPass'] = !empty($familyPass);
+                    $discount = array_filter($el['availablePrices'], static function($el) use ($date) {
+                        return stripos($el['start'], $date->format('Y-m-d')) !== false
+                            && $el['special_rate'] !== $el['retail_rate'];
+                    });
+                    $it['hasDiscount'] = !empty($discount);
+                }
             }
             unset($it);
             usort(
