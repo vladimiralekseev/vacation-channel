@@ -117,6 +117,7 @@ $tab = (int)Yii::$app->getRequest()->get('tab');
                                                             if ($d->format("H") > 16) {
                                                                 $color = "evening";
                                                             }
+                                                            $row['url'] = 'https://ibranson.com' . $row['url'];
                                                             ?>
                                                             <?php if (!empty($row['any_time'])) {?>
                                                                 <div class="time"><a href="<?= $row['url'] ?>" target="_blank"><?=

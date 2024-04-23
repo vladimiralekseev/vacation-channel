@@ -25,12 +25,14 @@ use yii\helpers\Html;
         ]
     ); ?>
 
-    <?= $form->field($model, 'title')->textInput() ?>
+    <?= $form->field($model, 'title')->textInput()->hint("Copy item's name") ?>
     <?= $form->field($model, 'type')->dropDownList(
             BransonSchedule::getTypesList(), ['prompt' => '--Select Item--']
     ) ?>
-    <?= $form->field($model, 'external_id')->textInput() ?>
-    <?= $form->field($model, 'order')->textInput() ?>
+    <?= $form->field($model, 'external_id')->textInput()
+        ->hint('Copy an external id from <a href="https://admin.ibranson.com/shows/index" target="_blank">Shows</a> or <a href="https://admin.ibranson.com/attractions/index" target="_blank">Attractions</a>') ?>
+    <?= $form->field($model, 'order')->textInput()->hint("Default value: 500. If this value will less than 500 this item will first in the list
+    ") ?>
     <?= $form->field($model, 'url')->textInput() ?>
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
