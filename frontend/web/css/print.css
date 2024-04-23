@@ -4,6 +4,8 @@ html, body, td, th {color:var(--c-black);}
 a {color:#000 !important;}
 .print-hide {display:none;}
 
+.fixed {max-width:740px;padding:0;}
+
 @media print {
     .main-print .morning {background:#ddd !important;-webkit-print-color-adjust: exact;color:#ddd !important;}
     .main-print .afternoon {background:#aaa !important;-webkit-print-color-adjust: exact;color:#aaa !important;}
@@ -12,4 +14,7 @@ a {color:#000 !important;}
     .main-print .afternoon a {color:#000 !important;}
     .main-print .evening a {color:#fff !important;}
     .special-rate, .special-rate:before {background:#000 !important;-webkit-print-color-adjust: exact;}
+
+    ul.decor li.color:before {background:#000;-webkit-print-color-adjust: exact;border-color:#000;}
+    .print-schedule .it-m .square, .print-schedule .it-m .it-box {border:1px solid #000;}
 }
