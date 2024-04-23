@@ -58,8 +58,8 @@ h5 {font:14px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 h6 {font:12px Manrope, Arial, sans-serif;margin:0 0 0 0;padding:0;}
 
 ul.decor li {list-style:none;}
-ul.decor li:before, ul.decor li.color:before {display:inline-block;content:"";border-radius:10px;width:8px;height:8px;background:var(--c-black);margin:0 10px 0 -20px;position:relative;top:-1px;}
-ul.decor li.color:before {background:var(--c-turquoise);}
+ul.decor li:before, ul.decor li.color:before {display:inline-block;content:"";border-radius:10px;width:8px;height:8px;border:1px solid var(--c-black);margin:0 10px 0 -20px;position:relative;top:-1px;}
+ul.decor li.color:before {background:var(--c-turquoise);border-color:var(--c-turquoise);}
 
 .row-small-padding, .row-small-padding .row {margin:0 -5px;}
 .row-small-padding .col-xs-1, .row-small-padding .col-md-1, .row-small-padding .col-1, .row-small-padding .col-lg-1,
@@ -88,14 +88,14 @@ ul.decor li.color:before {background:var(--c-turquoise);}
 .row-small-padding .col-xl-12, .row-small-padding .col-sm-12
 {padding-right:5px;padding-left:5px;}
 
-.btn {border-radius:10px;border:1px solid transparent;font-weight:bold;}
-.btn-primary, .btn-primary:disabled {background:linear-gradient(90deg, #09B3B0 0%, #09A8C7 100%);}
+.btn {border-radius:10px;border:1px solid transparent;font-weight:bold;box-shadow:none!important;}
+.btn-primary, .btn-primary:active, .btn-primary:disabled {background:linear-gradient(90deg, #09B3B0 0%, #09A8C7 100%);}
 .btn-primary:hover {border-color:var(--c-white);background:linear-gradient(90deg, #09B3B0 50%, #09A8C7 113%);}
 .btn-primary:disabled {color:rgba(255,255,255,0.7);border-color:transparent!important;}
-.btn-secondary, .btn-secondary:disabled {background:var(--c-white);color:var(--c-black);}
+.btn-secondary, .btn-secondary:active, .btn-secondary:disabled {background:var(--c-white);color:var(--c-black);}
 .btn-secondary:hover {border-color:var(--c-white);}
 .btn-secondary:disabled {color:var(--c-black);border-color:transparent!important;}
-.btn-third {background:var(--c-black);border-color:var(--c-white);color:var(--c-white);}
+.btn-third, .btn-third:active {background:var(--c-black);border-color:var(--c-white);color:var(--c-white);}
 .btn-third:hover {background:var(--c-white);border-color:var(--c-black);color:var(--c-black);}
 .btn-link {color:var(--c-turquoise);font-weight:normal;}
 
@@ -336,8 +336,10 @@ footer .contacts .lines:before {right:0;}
 .print-schedule td.first-column {width:30%;}
 .print-schedule td.first-column a {text-shadow:none;}
 .print-schedule td:not(.first-column) {padding:0;}
-.print-schedule .it-m {display: inline-block;margin:0 15px 0 0;}
-.print-schedule .it-m .square, .print-schedule .it-m .it-box {font-size:16px;width:30px;height:30px;display:inline-block;line-height:30px;border-radius:8px;text-align:center;font-weight:bold;}
+.print-schedule td, .print-schedule th {padding:3px;}
+.print-schedule .it-m {display: inline-block;}
+.print-schedule .it-m .square, .print-schedule .it-m .it-box {font-size:16px;width:25px;height:25px;display:inline-block;line-height:25px;border-radius:8px;text-align:center;font-weight:bold;}
+.print-schedule .it-m .it-box-small {width:20px;height:20px;line-height:20px;font-size:14px;border-radius:4px;}
 .print-schedule .it-m .square {border:1px solid var(--c-gray-light);}
 .print-schedule .it-m .morning {background:var(--c-yellow-light);color:var(--c-yellow-light);}
 .print-schedule .it-m .afternoon {background:var(--c-turquoise-light);color:var(--c-turquoise-light);}
@@ -345,6 +347,7 @@ footer .contacts .lines:before {right:0;}
 .print-schedule .it-m .it-box {background:var(--c-gray-light2);color:var(--c-black);}
 .print-schedule .it-m .it-box .special-rate {background:var(--c-turquoise);border-radius:100px;width:10px;height:10px;display:inline-block;}
 .print-schedule .time {position:relative;padding:6px 3px;display:block;}
+.print-schedule .time * {font-size:14px;}
 .print-schedule .time .special-rate {position:absolute;background:var(--c-turquoise);width:6px;height:6px;top:3px;right:5px;text-indent:-100px;overflow:hidden;border-radius:10px;}
 .print-schedule .time.morning {background:var(--c-yellow-light);}
 .print-schedule .time.afternoon {background:var(--c-turquoise-light);}
@@ -363,7 +366,6 @@ footer .contacts .lines:before {right:0;}
     .white-block {padding:7px;}
     .popup-schedule *:not(.btn) {font-size: 13px;}
     .print-schedule .it-m .square, .print-schedule .it-m .it-box {width:20px;height:20px;line-height:20px;border-radius:4px;}
-    .print-schedule td, .print-schedule th {padding:3px;}
     .schedule-filter {
         position: relative;
         width: auto;

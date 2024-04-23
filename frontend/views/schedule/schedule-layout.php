@@ -16,6 +16,13 @@ $this->title = 'Attractions schedule';
 
 $this->registerJsFile('/js/jquery.scrollbar.min.js', ['depends' => [JqueryAsset::class, BootstrapAsset::class]]);
 $this->registerCssFile('/css/jquery.scrollbar.css');
+
+$this->registerJs("
+    $(document).on('click', '.js-tab', function(){
+        $('.js-tab-print').toggleClass('d-none');
+    });
+");
+
 ?>
 <div class="row d-flex flex-column flex-lg-row">
     <div class="col-12 col-lg-2 order-1 order-lg-1 mb-3">

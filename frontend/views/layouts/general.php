@@ -27,13 +27,7 @@ $this->beginPage() ?><!DOCTYPE html>
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="wrapper-main">
-    <?= $this->render('header') ?>
-    <main class="pt-3">
-        <?= $content ?>
-    </main>
-    <?= $this->render('footer') ?>
-</div>
+<?= $content ?>
 <?php $this->endBody() ?>
 </body>
 </html>

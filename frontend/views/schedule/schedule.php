@@ -1,6 +1,7 @@
 <?php
 
 use frontend\models\forms\PopupScheduleSearch;
+use yii\helpers\Url;
 
 /**
  * @var PopupScheduleSearch $Search
@@ -8,26 +9,31 @@ use frontend\models\forms\PopupScheduleSearch;
  * @var array $scheduleForDay
  */
 
+$tab = (int)Yii::$app->getRequest()->get('tab');
 ?>
 <div class="popup-schedule">
     <div class="schedule-tab">
-        <div class="row row-small-padding">
+        <div class="row row-small-padding print-hide">
             <div class="col-5 d-none d-sm-block"></div>
             <div class="col-8 col-sm-5 text-left text-sm-end">
                 <ul class="nav nav-tabs justify-content-center justify-content-sm-start" role="tablist">
-                    <li role="presentation"><a <?php if ((int)Yii::$app->getRequest()->get('tab') === 0) {?>class="active"<?php
-                        }?> data-bs-target="#weekly" aria-controls="weekly" role="tab" data-bs-toggle="tab">Weekly</a></li>
-                    <li role="presentation" ><a <?php if ((int)Yii::$app->getRequest()->get('tab') === 1){?>class="active"<?php
-                        }?> data-bs-target="#daily" aria-controls="daily" role="tab" data-bs-toggle="tab">Daily</a></li>
+                    <li role="presentation"><a class="js-tab <?php if ($tab === 0) { ?>active<?php
+                        }?>" data-bs-target="#weekly" aria-controls="weekly" role="tab" data-bs-toggle="tab">Weekly</a></li>
+                    <li role="presentation" ><a class="js-tab <?php if ($tab === 1) { ?>active<?php
+                        }?>" data-bs-target="#daily" aria-controls="daily" role="tab" data-bs-toggle="tab">Daily</a></li>
                 </ul>
             </div>
             <div class="col-4 col-sm-2">
-                <a href="#" class="btn btn-primary w-100 btn-sm">Print</a>
+                <a href="<?= Url::to(['schedule/show-print', 'date' => $Search->getDateTimeFrom()->format('Y-m-d'), 'tab' => 0])
+                ?>" class="btn btn-primary w-100 btn-sm js-tab-print <?php if ($tab === 1) { ?>d-none<?php } ?>"
+                   target="_blank">Print</a>
+                <a href="<?= Url::to(['schedule/show-print', 'date' => $Search->getDateTimeFrom()->format('Y-m-d'), 'tab' => 1])
+                ?>" class="btn btn-primary w-100 btn-sm js-tab-print <?php if ($tab === 0) { ?>d-none<?php } ?>"
+                   target="_blank">Print</a>
             </div>
         </div>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane <?php if ((int)Yii::$app->getRequest()->get('tab') === 0)
-            {?>show active<?php }?>" id="weekly">
+            <div role="tabpanel" class="tab-pane <?php if ($tab === 0) { ?>show active<?php } ?>" id="weekly">
 
                 <div class="scrollbar-inner">
 
@@ -55,13 +61,13 @@ use frontend\models\forms\PopupScheduleSearch;
 
                     <div class="main-print print-schedule">
                         <div class="my-3">
-                            <span class="it-m mb-1"><span class="it-box">A</span> Adult</span>
-                            <span class="it-m mb-1"><span class="it-box">F</span> Family Pass</span>
-                            <span class="it-m mb-1">
-                                <span class="it-box"><span class="special-rate"></span></span> - Special Savings
+                            <span class="it-m mb-1 me-2"><span class="it-box">A</span> Adult</span>
+                            <span class="it-m mb-1 me-2"><span class="it-box">F</span> Family Pass</span>
+                            <span class="it-m mb-1 me-2">
+                                <span class="it-box"><span class="special-rate"></span></span> Special Savings
                             </span>
-                            <span class="it-m mb-1"><span class="square morning">M</span> Morning</span>
-                            <span class="it-m mb-1"><span class="square afternoon">A</span> Afternoon</span>
+                            <span class="it-m mb-1 me-2"><span class="square morning">M</span> Morning</span>
+                            <span class="it-m mb-1 me-2"><span class="square afternoon">A</span> Afternoon</span>
                             <span class="it-m mb-1"><span class="square evening">E</span> Evening</span>
                         </div>
 
@@ -87,15 +93,15 @@ use frontend\models\forms\PopupScheduleSearch;
                                         <td class="first-column">
                                             <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a>,
                                             <?php if($it["minAdultSpecial"]){?>
-                                                <span class="cost">$ <?=$it["minAdultSpecial"]?></span> <span class="cost strike">$ <?= $it["minAdult"]?></span> <span class="it-m"><span class="it-box">A</span></span>
+                                                <span class="cost">$ <?=$it["minAdultSpecial"]?></span> <span class="cost strike">$ <?= $it["minAdult"]?></span> <span class="it-m"><span class="it-box it-box-small">A</span></span>
                                             <?php } else if($it["minAdult"]) {?>
-                                                <span class="cost">$ <?=$it["minAdult"]?></span> <span class="it-m"><span class="it-box">A</span></span>
+                                                <span class="cost">$ <?=$it["minAdult"]?></span> <span class="it-m"><span class="it-box it-box-small">A</span></span>
                                             <?php }?>
                                             <?php if ($it["minFamilySpecial"]) {?>
                                                 <span class="cost">$ <?=$it["minFamilySpecial"]?></span> <span
-                                                        class="cost strike">$ <?= $it["minFamily"]?></span> <span class="it-m"><span class="it-box">F</span></span>
+                                                        class="cost strike">$ <?= $it["minFamily"]?></span> <span class="it-m"><span class="it-box it-box-small">F</span></span>
                                             <?php } else if ($it["minFamily"]) {?>
-                                                <span class="cost">$ <?=$it["minFamily"]?></span> <span class="it-m"><span class="it-box">F</span></span>
+                                                <span class="cost">$ <?=$it["minFamily"]?></span> <span class="it-m"><span class="it-box it-box-small">F</span></span>
                                             <?php }?>
                                         </td>
                                         <?php if (!empty($it["schedule"])) {?>
@@ -154,46 +160,46 @@ use frontend\models\forms\PopupScheduleSearch;
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="main-print print-schedule">
-                    <div class="my-3">
-                        <span class="it-m mb-1"><span class="it-box">A</span> Adult</span>
-                        <span class="it-m mb-1"><span class="it-box">F</span> Family Pass</span>
-                        <span class="it-m mb-1">
-                            <span class="it-box"><span class="special-rate"></span></span> - Special Savings
-                        </span>
+                    <div class="main-print print-schedule">
+                        <div class="my-3">
+                            <span class="it-m mb-1 me-2"><span class="it-box">A</span> Adult</span>
+                            <span class="it-m mb-1 me-2"><span class="it-box">F</span> Family Pass</span>
+                            <span class="it-m mb-1">
+                                <span class="it-box"><span class="special-rate"></span></span> Special Savings
+                            </span>
+                        </div>
+                        <table class="table table-bordered table-header">
+                            <thead>
+                            <tr>
+                                <th width="25%">Time</th>
+                                <th>Items</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($scheduleForDay as $mk => $ar) { ?>
+                            <tr>
+                                <td><div class="my-2"><?= $mk?></div></td>
+                                <td>
+                                    <ul class="decor my-2">
+                                        <?php foreach ($ar as $it) {?>
+                                        <li <?php if ($it['hasDiscount']) {?>class="color"<?php } ?>>
+                                            <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a>
+                                            <?php if ($it['hasAdult']) { ?>
+                                                <span class="it-m me-1"><span class="it-box it-box-small">A</span></span>
+                                            <?php }?>
+                                            <?php if ($it['hasFamilyPass']) { ?>
+                                                <span class="it-m me-1"><span class="it-box it-box-small">F</span></span>
+                                            <?php }?>
+                                        </li>
+                                        <?php }?>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="table table-bordered table-header">
-                        <thead>
-                        <tr>
-                            <th width="25%">Time</th>
-                            <th>Items</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($scheduleForDay as $mk => $ar) { ?>
-                        <tr>
-                            <td><div class="my-2"><?= $mk?></div></td>
-                            <td>
-                                <ul class="decor my-2">
-                                    <?php foreach ($ar as $it) {?>
-                                    <li <?php if ($it['hasDiscount']) {?>class="color"<?php } ?>>
-                                        <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a>
-                                        <?php if ($it['hasAdult']) { ?>
-                                            <span class="it-m"><span class="it-box">A</span></span>
-                                        <?php }?>
-                                        <?php if ($it['hasFamilyPass']) { ?>
-                                            <span class="it-m"><span class="it-box">F</span></span>
-                                        <?php }?>
-                                    </li>
-                                    <?php }?>
-                                </ul>
-                            </td>
-                        </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

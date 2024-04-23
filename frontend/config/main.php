@@ -66,6 +66,7 @@ return [
                 '/about'                              => 'site/about',
                 '/programming'                        => 'programming/index',
                 '/schedule/show'                      => 'schedule/show',
+                '/schedule/show-print'                => 'schedule/show-print',
                 '/schedule/show-schedule'             => 'schedule/show-schedule',
                 '/schedule/attraction'                => 'schedule/attraction',
                 '/schedule/attraction-schedule'       => 'schedule/attraction-schedule',

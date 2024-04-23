@@ -8,6 +8,8 @@ use yii\web\Controller;
 
 class BaseController extends Controller
 {
+    public const LAYOUT_PRINT = 'print';
+
     /**
      * @param $action
      *

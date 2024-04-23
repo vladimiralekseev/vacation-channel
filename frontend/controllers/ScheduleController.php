@@ -14,6 +14,15 @@ use yii\helpers\Url;
 
 class ScheduleController extends BaseController
 {
+    public function actionShowPrint(): string
+    {
+        $this->layout = self::LAYOUT_PRINT;
+        $url = 'https://ibranson.com/shows-in-branson-missouri/popup-schedule-api/';
+        $schedule = BransonSchedule::find()->where(['type' => BransonSchedule::TYPE_SHOW])
+            ->indexBy('external_id')->all();
+        return $this->schedule($url, $schedule);
+    }
+
     public function actionShow(): string
     {
         $url = Url::to(['schedule/show-schedule']);
@@ -28,6 +37,7 @@ class ScheduleController extends BaseController
 
     public function actionShowSchedule(): string
     {
+        $this->layout = false;
         $url = 'https://ibranson.com/shows-in-branson-missouri/popup-schedule-api/';
         $schedule = BransonSchedule::find()->where(['type' => BransonSchedule::TYPE_SHOW])
             ->indexBy('external_id')->all();
@@ -36,6 +46,7 @@ class ScheduleController extends BaseController
 
     public function actionAttractionSchedule(): string
     {
+        $this->layout = false;
         $url = 'https://ibranson.com/branson-mo-attractions/popup-schedule-api/';
         $schedule = BransonSchedule::find()->where(['type' => BransonSchedule::TYPE_ATTRACTION])
             ->indexBy('external_id')->all();
@@ -44,7 +55,6 @@ class ScheduleController extends BaseController
 
     private function schedule($url, $schedule): string
     {
-        $this->layout = false;
         $date = new DateTime();
         try {
             $date = new DateTime(Yii::$app->getRequest()->get('date'));
@@ -118,7 +128,7 @@ class ScheduleController extends BaseController
                     $it['hasFamilyPass'] = !empty($familyPass);
                     $discount = array_filter($el['availablePrices'], static function($el) use ($date) {
                         return stripos($el['start'], $date->format('Y-m-d')) !== false
-                            && $el['special_rate'] !== $el['retail_rate'];
+                            && $el['special_rate'] && $el['special_rate'] !== $el['retail_rate'];
                     });
                     $it['hasDiscount'] = !empty($discount);
                 }

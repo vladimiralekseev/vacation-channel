@@ -1,0 +1,15 @@
+body {background:var(--c-white);}
+html, body, td, th {color:var(--c-black);}
+
+a {color:#000 !important;}
+.print-hide {display:none;}
+
+@media print {
+    .main-print .morning {background:#ddd !important;-webkit-print-color-adjust: exact;color:#ddd !important;}
+    .main-print .afternoon {background:#aaa !important;-webkit-print-color-adjust: exact;color:#aaa !important;}
+    .main-print .evening {background:#666 !important;-webkit-print-color-adjust: exact;color:#666 !important;}
+    .main-print .morning a,
+    .main-print .afternoon a {color:#000 !important;}
+    .main-print .evening a {color:#fff !important;}
+    .special-rate, .special-rate:before {background:#000 !important;-webkit-print-color-adjust: exact;}
+}
