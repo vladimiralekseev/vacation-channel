@@ -45,16 +45,16 @@ $tab = (int)Yii::$app->getRequest()->get('tab');
                                 ("m/d/Y")?>
                             </div>
                         </div>
-                        <div class="col-7 col-sm-4 text-center mb-2 mb-sm-3">
-                            <b>Contact Phone:</b><br>
-                            <a href="tel:(417) 294-6505" class="text-black d-inline-block mt-0 mt-sm-2">
-                                <i class="icon icon-phone"></i> (417) 294-6505
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-end mb-2 mb-sm-3">
+                        <div class="col-12 col-sm-4 text-center mb-2 mb-sm-3">
                             <b>Sponsored by iBranson:</b><br>
                             <a href="https://ibranson.com" target="_blank">
                                 <img src="/img/ib-logo-25y.png" alt="IBranson" class="logo" />
+                            </a>
+                        </div>
+                        <div class="col-7 col-sm-4 text-center text-sm-end mb-2 mb-sm-3">
+                            <b>Contact Phone:</b><br>
+                            <a href="tel:14173378455" class="text-black d-inline-block mt-0 mt-sm-2">
+                                <i class="icon icon-phone"></i> 1 (417) 337-8455
                             </a>
                         </div>
                     </div>
@@ -148,16 +148,16 @@ $tab = (int)Yii::$app->getRequest()->get('tab');
                                 <?= $Search->getDateTimeFrom()->format("m/d/Y")?>
                             </div>
                         </div>
-                        <div class="col-7 col-sm-4 text-center mb-2 mb-sm-3">
-                            <b>Contact Phone:</b><br>
-                            <a href="tel:(417) 294-6505" class="text-black d-inline-block mt-0 mt-sm-2">
-                                <i class="icon icon-phone"></i> (417) 294-6505
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-end mb-2 mb-sm-3">
+                        <div class="col-12 col-sm-4 text-center mb-2 mb-sm-3">
                             <b>Sponsored by iBranson:</b><br>
                             <a href="https://ibranson.com" target="_blank">
                                 <img src="/img/ib-logo-25y.png" alt="IBranson" class="logo" />
+                            </a>
+                        </div>
+                        <div class="col-7 col-sm-4 text-center text-sm-end mb-2 mb-sm-3">
+                            <b>Contact Phone:</b><br>
+                            <a href="tel:14173378455" class="text-black d-inline-block mt-0 mt-sm-2">
+                                <i class="icon icon-phone"></i> 1 (417) 337-8455
                             </a>
                         </div>
                     </div>

@@ -79,6 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         'external_id',
                         'order',
+                        'url',
                         [
                             'class'          => ActionColumn::class,
                             'contentOptions' => ['style' => 'width:70px; text-align:center;'],

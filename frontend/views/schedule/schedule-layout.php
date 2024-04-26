@@ -26,7 +26,9 @@ $this->registerJs("
 ?>
 <div class="row d-flex flex-column flex-lg-row">
     <div class="col-12 col-lg-2 order-1 order-lg-1 mb-3">
+        <?php if (false) { ?>
         <div class="ad-example">Your ad can be here!</div>
+        <?php } ?>
     </div>
     <div class="col-12 col-lg-8 order-3 order-lg-2 mb-3">
         <div class="white-block position-relative">
@@ -42,7 +44,9 @@ $this->registerJs("
         </div>
     </div>
     <div class="col-12 col-lg-2 order-2 order-lg-3 mb-3">
-        <div class="ad-example">Your ad can be here!</div>
+        <?php if (false) { ?>
+            <div class="ad-example">Your ad can be here!</div>
+        <?php } ?>
     </div>
 </div>
 
