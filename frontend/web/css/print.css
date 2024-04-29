@@ -2,6 +2,7 @@ body {background:var(--c-white);}
 html, body, td, th {color:var(--c-black);}
 
 a {color:#000 !important;}
+.print-only {display:block;}
 .print-hide {display:none;}
 
 .fixed {max-width:740px;padding:0;}

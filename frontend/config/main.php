@@ -69,6 +69,7 @@ return [
                 '/schedule/show-print'                => 'schedule/show-print',
                 '/schedule/show-schedule'             => 'schedule/show-schedule',
                 '/schedule/attraction'                => 'schedule/attraction',
+                '/schedule/attraction-print'          => 'schedule/attraction-print',
                 '/schedule/attraction-schedule'       => 'schedule/attraction-schedule',
                 '/c/<code:[\w\d\-]+>'                 => 'category/detail',
                 '/<code:[\w\d\-]+>/search'            => 'category/search',

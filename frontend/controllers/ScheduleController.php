@@ -14,13 +14,19 @@ use yii\helpers\Url;
 
 class ScheduleController extends BaseController
 {
+    public const ATTRACTION_URL = 'https://ibranson.com/branson-mo-attractions/popup-schedule-api/';
+    public const SHOW_URL = 'https://ibranson.com/shows-in-branson-missouri/popup-schedule-api/';
+
     public function actionShowPrint(): string
     {
         $this->layout = self::LAYOUT_PRINT;
-        $url = 'https://ibranson.com/shows-in-branson-missouri/popup-schedule-api/';
-        $schedule = BransonSchedule::find()->where(['type' => BransonSchedule::TYPE_SHOW])
-            ->indexBy('external_id')->all();
-        return $this->schedule($url, $schedule);
+        return $this->schedule(self::SHOW_URL, BransonSchedule::TYPE_SHOW);
+    }
+
+    public function actionAttractionPrint(): string
+    {
+        $this->layout = self::LAYOUT_PRINT;
+        return $this->schedule(self::ATTRACTION_URL, BransonSchedule::TYPE_ATTRACTION);
     }
 
     public function actionShow(): string
@@ -38,23 +44,19 @@ class ScheduleController extends BaseController
     public function actionShowSchedule(): string
     {
         $this->layout = false;
-        $url = 'https://ibranson.com/shows-in-branson-missouri/popup-schedule-api/';
-        $schedule = BransonSchedule::find()->where(['type' => BransonSchedule::TYPE_SHOW])
-            ->indexBy('external_id')->all();
-        return $this->schedule($url, $schedule);
+        return $this->schedule(self::SHOW_URL, BransonSchedule::TYPE_SHOW);
     }
 
     public function actionAttractionSchedule(): string
     {
         $this->layout = false;
-        $url = 'https://ibranson.com/branson-mo-attractions/popup-schedule-api/';
-        $schedule = BransonSchedule::find()->where(['type' => BransonSchedule::TYPE_ATTRACTION])
-            ->indexBy('external_id')->all();
-        return $this->schedule($url, $schedule);
+        return $this->schedule(self::ATTRACTION_URL, BransonSchedule::TYPE_ATTRACTION);
     }
 
-    private function schedule($url, $schedule): string
+    private function schedule($url, $type): string
     {
+        $schedule = BransonSchedule::find()->where(['type' => $type])->indexBy('external_id')->all();
+
         $date = new DateTime();
         try {
             $date = new DateTime(Yii::$app->getRequest()->get('date'));
@@ -145,6 +147,6 @@ class ScheduleController extends BaseController
             );
         }
 
-        return $this->render('schedule', compact('Search', 'scheduleByDay', 'scheduleForDay'));
+        return $this->render('schedule', compact('Search', 'scheduleByDay', 'scheduleForDay', 'type'));
     }
 }

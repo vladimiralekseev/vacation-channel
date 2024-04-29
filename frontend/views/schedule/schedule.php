@@ -1,18 +1,29 @@
 <?php
 
+use common\models\BransonSchedule;
 use frontend\models\forms\PopupScheduleSearch;
 use yii\helpers\Url;
 
 /**
  * @var PopupScheduleSearch $Search
- * @var array $scheduleByDay
- * @var array $scheduleForDay
+ * @var array               $scheduleByDay
+ * @var array               $scheduleForDay
+ * @var string              $type
  */
 
 $tab = (int)Yii::$app->getRequest()->get('tab');
+$controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'schedule/attraction-print';
 ?>
 <div class="popup-schedule">
     <div class="schedule-tab">
+        <div class="print-only pt-2">
+            <div class="row align-items-center">
+                <div class="col-6"><img src="/img/logo.png" alt="Vacation Channel" /></div>
+                <div class="col-6 text-end fs-5">
+                    <?= $type === BransonSchedule::TYPE_SHOW ? 'Shows' : 'Attractions' ?> Schedule
+                </div>
+            </div>
+        </div>
         <div class="row row-small-padding print-hide">
             <div class="col-5 d-none d-sm-block"></div>
             <div class="col-8 col-sm-5 text-left text-sm-end">
@@ -24,10 +35,10 @@ $tab = (int)Yii::$app->getRequest()->get('tab');
                 </ul>
             </div>
             <div class="col-4 col-sm-2">
-                <a href="<?= Url::to(['schedule/show-print', 'date' => $Search->getDateTimeFrom()->format('Y-m-d'), 'tab' => 0])
+                <a href="<?= Url::to([$controller, 'date' => $Search->getDateTimeFrom()->format('Y-m-d'), 'tab' => 0])
                 ?>" class="btn btn-primary w-100 btn-sm js-tab-print <?php if ($tab === 1) { ?>d-none<?php } ?>"
                    target="_blank">Print</a>
-                <a href="<?= Url::to(['schedule/show-print', 'date' => $Search->getDateTimeFrom()->format('Y-m-d'), 'tab' => 1])
+                <a href="<?= Url::to([$controller, 'date' => $Search->getDateTimeFrom()->format('Y-m-d'), 'tab' => 1])
                 ?>" class="btn btn-primary w-100 btn-sm js-tab-print <?php if ($tab === 0) { ?>d-none<?php } ?>"
                    target="_blank">Print</a>
             </div>

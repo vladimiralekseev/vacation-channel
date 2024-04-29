@@ -322,6 +322,8 @@ footer .contacts .lines:before {right:0;}
 .schedule-filter .datepicker {color:var(--c-black);background:var(--c-gray-light2);cursor:pointer;font-size:15px;}
 .schedule-filter .icon {position:absolute;top:7px;right:10px;}
 
+.print-only {display:none;}
+
 .popup-schedule * {font-size:15px;}
 .popup-schedule *:not(.btn) {color:var(--c-black);}
 .popup-schedule a:not(.btn) {color:var(--c-blue);}
