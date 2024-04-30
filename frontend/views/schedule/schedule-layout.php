@@ -12,7 +12,7 @@ $this->registerJsFile('js/bootstrap-datepicker.min.js', ['depends' => [JqueryAss
 $this->registerJsFile('js/schedule.js', ['depends' => [JqueryAsset::class, BootstrapAsset::class]]);
 $this->registerJs('schedule.init("' . $url . '")');
 
-$this->title = 'Attractions schedule';
+$this->title = 'Attractions Schedules';
 
 $this->registerJsFile('/js/jquery.scrollbar.min.js', ['depends' => [JqueryAsset::class, BootstrapAsset::class]]);
 $this->registerCssFile('/css/jquery.scrollbar.css');

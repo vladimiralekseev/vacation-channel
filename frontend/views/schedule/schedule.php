@@ -20,7 +20,7 @@ $controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'sc
             <div class="row align-items-center">
                 <div class="col-6"><img src="/img/logo.png" alt="Vacation Channel" /></div>
                 <div class="col-6 text-end fs-5">
-                    <?= $type === BransonSchedule::TYPE_SHOW ? 'Shows' : 'Attractions' ?> Schedule
+                    <?= $type === BransonSchedule::TYPE_SHOW ? 'Shows' : 'Attractions' ?> Schedules
                 </div>
             </div>
         </div>
