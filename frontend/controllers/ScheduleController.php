@@ -95,10 +95,13 @@ class ScheduleController extends BaseController
         usort(
             $scheduleByDay,
             static function ($a, $b) {
-                if ($a['order'] === $b['order']) {
-                    return 0;
+                if ((int)$a['order'] === (int)$b['order']) {
+                    if ($a['name'] === $b['name']) {
+                        return 0;
+                    }
+                    return ($a['name'] < $b['name']) ? -1 : 1;
                 }
-                return ($a['order'] < $b['order']) ? -1 : 1;
+                return ((int)$a['order'] < (int)$b['order']) ? -1 : 1;
             }
         );
         $scheduleForDay = $scheduleCache['scheduleForDay'];
