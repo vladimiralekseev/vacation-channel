@@ -4,7 +4,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Shows Schedules';
+$this->title = 'Show Schedules';
 
 ?>
 <div class="row">
@@ -13,7 +13,7 @@ $this->title = 'Shows Schedules';
     </div>
     <div class="col-4 p-3 text-end d-none d-lg-block">
         <a href="<?= Url::to(['schedule/attraction']) ?>" class="link-next mt-1">
-            Attractions Schedules <span class="icon"></span>
+            Attraction Schedules <span class="icon"></span>
         </a>
     </div>
 </div>
