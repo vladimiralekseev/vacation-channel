@@ -34,6 +34,7 @@ class BransonSchedule extends _source_BransonSchedule
             parent::rules(),
             [
                 [['order'], 'default', 'value' => 500],
+                [['external_id'], 'unique'],
             ]
         );
     }
