@@ -2,6 +2,8 @@
 
 namespace common\models;
 
+use DateTime;
+use Exception;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
@@ -52,5 +54,14 @@ class BransonSchedule extends _source_BransonSchedule
         $ar = self::getTypesList();
 
         return $ar[$val] ?? $val;
+    }
+
+    public function getExpiredDate(): ?DateTime
+    {
+        try {
+            return new DateTime($this->expiry_date);
+        } catch (Exception $e) {
+            return null;
+        }
     }
 }

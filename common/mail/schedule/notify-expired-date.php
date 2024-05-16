@@ -10,13 +10,16 @@ $domain = 'https://' . Yii::$app->params['domainRoot'];
 <ul>
     <?php foreach ($schedules as $schedule) { ?>
         <li>
-            <a style="color:#09B3B0;" href="<?= $domain ?>/schedule/view?id=<?= $schedule->id ?>" target="_blank"><?= $schedule->title ?></a>
-            <br />
-            Expiry date: <?= $schedule->expiry_date ?><br />
-            Url: <a style="color:#09B3B0;" href="<?= $schedule->url ?>" target="_blank"><?= $schedule->url ?></a><br />
-            Type: <?= $schedule->type ?><br />
-            External ID: <?= $schedule->external_id ?><br />
-            Order: <?= $schedule->order ?><br />
+            <a style="color:#09B3B0;" href="<?= $domain ?>/schedule/view?id=<?= $schedule->id ?>"
+               target="_blank"><?= $schedule->title ?></a>
+            <br/>
+            <?php if ($schedule->getExpiredDate()) { ?>
+                Expiry date: <?= $schedule->getExpiredDate()->format('Y-m-d 23:59:59') ?><br/>
+            <?php } ?>
+            Url: <a style="color:#09B3B0;" href="<?= $schedule->url ?>" target="_blank"><?= $schedule->url ?></a><br/>
+            Type: <?= $schedule->type ?><br/>
+            External ID: <?= $schedule->external_id ?><br/>
+            Order: <?= $schedule->order ?><br/>
         </li>
     <?php } ?>
 </ul>
