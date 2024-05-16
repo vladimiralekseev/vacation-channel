@@ -56,7 +56,13 @@ class ScheduleController extends BaseController
     private function schedule($url, $type): string
     {
         $schedule = BransonSchedule::find()->where(['type' => $type])
-            ->andWhere(['>=', 'expiry_date', (new DateTime())->format('Y-m-d')])
+            ->andWhere(
+                [
+                    'or',
+                    ['>=', 'expiry_date', (new DateTime())->format('Y-m-d')],
+                    ['expiry_date' => null],
+                ]
+            )
             ->indexBy('external_id')->all();
 
         $date = new DateTime();
