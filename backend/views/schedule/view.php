@@ -55,6 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'value'     => BransonSchedule::getTypeValue($model->type),
                         ],
                         'order',
+                        'expiry_date',
                         'url',
                         'created_at',
                         'updated_at',

@@ -79,6 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         'external_id',
                         'order',
+                        'expiry_date',
                         'url',
                         [
                             'class'          => ActionColumn::class,

@@ -128,7 +128,11 @@ $controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'sc
                                                             if ($d->format("H") > 16) {
                                                                 $color = "evening";
                                                             }
-                                                            $row['url'] = 'https://ibranson.com' . $row['url'];
+                                                            if ($it['extraUrl']) {
+                                                                $row['url'] = $it['extraUrl'];
+                                                            } else {
+                                                                $row['url'] = 'https://ibranson.com' . $row['url'];
+                                                            }
                                                             ?>
                                                             <?php if (!empty($row['any_time'])) {?>
                                                                 <div class="time"><a href="<?= $row['url'] ?>" target="_blank"><?=

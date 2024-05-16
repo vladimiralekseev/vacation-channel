@@ -6,6 +6,7 @@ use mihaildev\ckeditor\CKEditor;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\jui\DatePicker;
 
 /**
  * @var yii\web\View             $this
@@ -33,6 +34,11 @@ use yii\helpers\Html;
         ->hint('Copy an external id from <a href="https://admin.ibranson.com/shows/index" target="_blank">Shows</a> or <a href="https://admin.ibranson.com/attractions/index" target="_blank">Attractions</a>') ?>
     <?= $form->field($model, 'order')->textInput()->hint("Default value: 500. If this value is less then 500, this item will appear first in the list
     ") ?>
+    <?= $form->field($model, 'expiry_date')->widget(
+        DatePicker::class, [
+        //'language' => 'ru',
+        'dateFormat' => 'yyyy-MM-dd',
+    ]) ?>
     <?= $form->field($model, 'url')->textInput() ?>
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">

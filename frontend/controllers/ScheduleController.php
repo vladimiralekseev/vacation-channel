@@ -55,7 +55,9 @@ class ScheduleController extends BaseController
 
     private function schedule($url, $type): string
     {
-        $schedule = BransonSchedule::find()->where(['type' => $type])->indexBy('external_id')->all();
+        $schedule = BransonSchedule::find()->where(['type' => $type])
+            ->andWhere(['>=', 'expiry_date', (new DateTime())->format('Y-m-d')])
+            ->indexBy('external_id')->all();
 
         $date = new DateTime();
         try {
@@ -85,8 +87,10 @@ class ScheduleController extends BaseController
                 }
                 if (!empty($schedule[$it['id_external']]) && $schedule[$it['id_external']]['url']) {
                     $it['url'] = $schedule[$it['id_external']]['url'];
+                    $it['extraUrl'] = $schedule[$it['id_external']]['url'];
                 } else {
                     $it['url'] = 'https://ibranson.com' . $it['url'];
+                    $it['extraUrl'] = null;
                 }
                 return $it;
             },

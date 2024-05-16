@@ -15,6 +15,7 @@ use Yii;
  * @property string|null $url
  * @property string|null $created_at
  * @property string|null $updated_at
+ * @property string|null $expiry_date
  */
 class _source_BransonSchedule extends \yii\db\ActiveRecord
 {
@@ -34,7 +35,7 @@ class _source_BransonSchedule extends \yii\db\ActiveRecord
         return [
             [['title', 'type', 'external_id'], 'required'],
             [['external_id', 'order'], 'integer'],
-            [['created_at', 'updated_at'], 'safe'],
+            [['created_at', 'updated_at', 'expiry_date'], 'safe'],
             [['title'], 'string', 'max' => 256],
             [['type'], 'string', 'max' => 16],
             [['url'], 'string', 'max' => 1024],
@@ -55,6 +56,7 @@ class _source_BransonSchedule extends \yii\db\ActiveRecord
             'url' => 'Url',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'expiry_date' => 'Expiry Date',
         ];
     }
 }
