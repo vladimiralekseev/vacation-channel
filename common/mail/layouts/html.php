@@ -22,7 +22,7 @@ use yii\web\View;
     <div style="margin:0 auto;max-width:600px;background:#fff;padding:20px;">
         <div style="text-align:center;margin:0 0 20px;padding:0 0 20px;border-bottom:5px solid #09B3B0;">
             <a style="color:#09B3B0;" href="https://<?= Yii::$app->params['domainRoot'] ?>">
-                <img src="https://<?= Yii::$app->params['domainRoot'] ?>/img/logo-3.png" alt="Branson Restaurants">
+                <b>Vacation Channel</b>
             </a>
         </div>
         <?= $content ?>

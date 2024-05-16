@@ -10,10 +10,10 @@ $domain = 'https://' . Yii::$app->params['domainRoot'];
 <ul>
     <?php foreach ($schedules as $schedule) { ?>
         <li>
-            <a href="<?= $domain ?>/schedule/view?id=<?= $schedule->id ?>" target="_blank"><?= $schedule->title ?></a>
+            <a style="color:#09B3B0;" href="<?= $domain ?>/schedule/view?id=<?= $schedule->id ?>" target="_blank"><?= $schedule->title ?></a>
             <br />
             Expiry date: <?= $schedule->expiry_date ?><br />
-            Url: <?= $schedule->url ?><br />
+            Url: <a style="color:#09B3B0;" href="<?= $schedule->url ?>" target="_blank"><?= $schedule->url ?></a><br />
             Type: <?= $schedule->type ?><br />
             External ID: <?= $schedule->external_id ?><br />
             Order: <?= $schedule->order ?><br />
