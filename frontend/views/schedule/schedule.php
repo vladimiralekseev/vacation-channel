@@ -13,6 +13,9 @@ use yii\helpers\Url;
 
 $tab = (int)Yii::$app->getRequest()->get('tab');
 $controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'schedule/attraction-print';
+$featured = (bool)array_filter($scheduleByDay, static function ($it) {
+    return (bool)$it['extraUrl'];
+});
 ?>
 <div class="popup-schedule">
     <div class="schedule-tab">
@@ -85,7 +88,7 @@ $controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'sc
                         <table class="table table-bordered table-header">
                             <thead>
                             <tr>
-                                <th class="first-column"><b>Description of Item</b></th>
+                                <th class="first-column"><b><?= $featured ? 'Featured' : 'Listings'?></b></th>
                                 <?php for ($i=0; $i<7; $i++) {?>
                                     <th class="text-center"><?=
                                         date(
@@ -100,15 +103,27 @@ $controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'sc
 
                             <?php if ($scheduleByDay) {?>
                                 <?php foreach ($scheduleByDay as $it) {?>
+                                    <?php if ($featured && !$it['extraUrl']) { ?>
+                            </tbody>
+                            <thead>
+                            <tr>
+                                <th class="first-column"><div class="mt-2"><b>Listings</b></div></th>
+                                <th class="text-center" colspan="7"></th>
+                            </tr>
+                            </thead>
+                            <tbody class="padding-unset">
+                                    <?php $featured = false; ?>
+                                    <?php } ?>
                                     <tr>
                                         <td class="first-column">
-                                            <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a>,
-                                            <?php if($it["minAdultSpecial"]){?>
-                                                <span class="cost">$ <?=$it["minAdultSpecial"]?></span> <span class="cost strike">$ <?= $it["minAdult"]?></span> <span class="it-m"><span class="it-box it-box-small">A</span></span>
+                                            <a href="<?= $it['url'] ?>" target="_blank"><?= $it['name'] ?></a><br/>
+                                            <?php if($it["minAdultSpecial"] && !$it['extraUrl']){?>
+                                                <span class="cost">$ <?=$it["minAdultSpecial"]?></span> <span
+                                                        class="cost strike">$ <?= $it["minAdult"]?></span> <span class="it-m"><span class="it-box it-box-small">A</span></span>
                                             <?php } else if($it["minAdult"]) {?>
                                                 <span class="cost">$ <?=$it["minAdult"]?></span> <span class="it-m"><span class="it-box it-box-small">A</span></span>
                                             <?php }?>
-                                            <?php if ($it["minFamilySpecial"]) {?>
+                                            <?php if ($it["minFamilySpecial"] && !$it['extraUrl']) {?>
                                                 <span class="cost">$ <?=$it["minFamilySpecial"]?></span> <span
                                                         class="cost strike">$ <?= $it["minFamily"]?></span> <span class="it-m"><span class="it-box it-box-small">F</span></span>
                                             <?php } else if ($it["minFamily"]) {?>
@@ -136,7 +151,7 @@ $controller = $type === BransonSchedule::TYPE_SHOW ? 'schedule/show-print' : 'sc
                                                             ?>
                                                             <?php if (!empty($row['any_time'])) {?>
                                                                 <div class="time"><a href="<?= $row['url'] ?>" target="_blank"><?=
-                                                                        $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?>Any Time</span></a></div>
+                                                                        $row['special_rate'] && !$it['extraUrl'] ? '<b class="special-rate">$</b>' : ''?>Any Time</span></a></div>
                                                             <?php } else {?>
                                                                 <div class="time <?= $color?>"><a href="<?= $row['url'] ?>" target="_blank"><?= $row['special_rate'] ? '<b class="special-rate">$</b>' : ''?><?= $d->format("h:i A")?></a></div>
                                                             <?php }?>
