@@ -331,7 +331,8 @@ footer .contacts .lines:before {right:0;}
 .popup-schedule .info {border-top:1px solid var(--c-gray-light2);border-bottom:1px solid var(--c-gray-light2);}
 .print-schedule td, .print-schedule th {border:none;border-left:1px solid var(--c-gray-light2);border-top:1px solid var(--c-gray-light2);}
 .print-schedule th {border-top:1px solid var(--c-white);}
-.print-schedule thead th {border-top:1px solid var(--c-gray-light2);}
+.print-schedule thead th {background: var(--c-gray-light2);}
+.print-schedule thead th:first-child {padding-left:10px;}
 .print-schedule td:first-child, .print-schedule th:first-child {border-left:1px solid var(--c-white);}
 .print-schedule a {text-shadow:0 0 10px rgba(0,0,0,0.1)}
 .print-schedule .cost {font-weight:bold;}

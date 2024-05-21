@@ -88,7 +88,7 @@ $featured = (bool)array_filter($scheduleByDay, static function ($it) {
                         <table class="table table-bordered table-header">
                             <thead>
                             <tr>
-                                <th class="first-column"><b><?= $featured ? 'Featured' : 'Listings'?></b></th>
+                                <th class="first-column"><b><?= $featured ? 'FEATURED' : 'LISTINGS'?></b></th>
                                 <?php for ($i=0; $i<7; $i++) {?>
                                     <th class="text-center"><?=
                                         date(
@@ -104,10 +104,11 @@ $featured = (bool)array_filter($scheduleByDay, static function ($it) {
                             <?php if ($scheduleByDay) {?>
                                 <?php foreach ($scheduleByDay as $it) {?>
                                     <?php if ($featured && !$it['extraUrl']) { ?>
+                            <tr><td><br/></td></tr>
                             </tbody>
                             <thead>
                             <tr>
-                                <th class="first-column"><div class="mt-2"><b>Listings</b></div></th>
+                                <th class="first-column"><b>LISTINGS</b></th>
                                 <th class="text-center" colspan="7"></th>
                             </tr>
                             </thead>
