@@ -67,16 +67,10 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
                     </li>
                 <?php } ?>
                 <li class="d-inline-block d-lg-none">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#satisfaction-guaranteed">
-                        Shows Schedules
-                    </a>
+                    <a href="<?= Url::to(['schedule/show']) ?>">Shows Schedules</a>
                 </li>
                 <li class="d-inline-block d-lg-none">
-                    <a href="https://ibranson.com/branson-mo-attractions/?open-print-schedule=1" target="_blank"
-                       onclick="$('#show-schedule').modal('show');return null;"
-                    >
-                        Attractions Schedules
-                    </a>
+                    <a href="<?= Url::to(['schedule/attraction']) ?>">Attractions Schedules</a>
                 </li>
             </ul>
         </div>
