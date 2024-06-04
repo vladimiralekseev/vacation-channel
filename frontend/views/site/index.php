@@ -1,6 +1,7 @@
 <?php
 
 use common\models\Video;
+use yii\helpers\Url;
 
 /**
  * @var Video     $mainVideo
@@ -9,10 +10,14 @@ use common\models\Video;
  */
 
 ?>
+<div class="d-block d-sm-none text-center mb-3">
+    <a href="<?= Url::to(['schedule/show']) ?>" class="btn btn-secondary">Shows</a>
+    <a href="<?= Url::to(['schedule/attraction']) ?>" class="btn btn-secondary">Attractions</a>
+</div>
 <div class="main-block mb-3">
     <div class="row">
         <div class="col-lg-6 text-center text-md-start">
-            <div class="site-name">Branson, Missouri&nbsp;TV</div>
+            <div class="site-name mb-3">Branson, Missouri&nbsp;TV</div>
             <div class="row">
                 <div class="col-md-auto mt-1 mb-3 mb-lg-5">
                     <a class="btn btn-secondary" href="#search-block">Explore more</a>

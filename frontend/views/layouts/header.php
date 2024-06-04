@@ -55,8 +55,7 @@ $categories = Category::find()->where(['menu' => Category::MENU_ACTIVE])->orderB
         <div id="menu-general" class="menu-general menu-general-control-is-close">
             <ul class="menu-main">
                 <li <?php if ($this->context->id === 'site' && $this->context->action->id === 'index') {
-                    ?>class="active"<?php } ?>><a
-                            href="/#search-block">Featured</a></li>
+                    ?>class="active"<?php } ?>><a href="/#search-block">Featured</a></li>
                 <?php foreach ($categories as $category) { ?>
                     <li <?php if ($this->context->id === 'category' && $this->context->actionParams['code'] ===
                     $category->code) { ?>class="active"<?php }
