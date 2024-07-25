@@ -28,7 +28,8 @@ class VideoSearch extends Video
                 ],
                 'sort'       => [
                     'defaultOrder' => [
-                        'order' => SORT_ASC,
+                        'order' => SORT_DESC,
+                        'id' => SORT_DESC,
                     ],
                 ],
             ]

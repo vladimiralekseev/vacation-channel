@@ -27,7 +27,7 @@ $this->title = $category->name;
     <?php ActiveForm::end(); ?>
 </div>
 <div class="video-list js-video-list">
-    <?= $this->render('video-list', ['videos' => $category->getVideos()->orderBy('id desc')->all()]) ?>
+    <?= $this->render('video-list', ['videos' => $category->getVideos()->orderBy('order desc, id desc')->all()]) ?>
 </div>
 <?php $this->registerJsFile('/js/category-search.js') ?>
 <?php $this->registerJs('categorySearch.init();') ?>
