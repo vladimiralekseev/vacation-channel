@@ -8,6 +8,8 @@ use yii\helpers\Url;
  */
 
 $this->title = $video->name;
+
+$autoplay = Yii::$app->cookieConsentHelper->hasConsent('cookie_youtube') ? '&autoplay=1' : ''
 ?>
 <div class="mb-3 d-none d-lg-block">
     <a href="<?= Url::to(['category/detail', 'code' => $video->category->code]) ?>" class="link-back">
@@ -21,12 +23,12 @@ $this->title = $video->name;
             <div class="video">
                 <iframe id="ytplayer" type="text/html" width="640" height="390"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        src="https://www.youtube.com/embed/<?= $video->youtube_code ?>?enablejsapi=1&autoplay=1"
+                        src="https://www.youtube-nocookie.com/embed/<?= $video->youtube_code ?>?enablejsapi=1<?= $autoplay ?>"
                         frameborder="0"></iframe>
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="time">Branson Vacation Channel — <span id="youtube-duration"></span></div>
+            <div class="time"><span id="youtube-duration"></span></div>
             <div class="description">
                 <?= !empty($video->description) ? $video->description : $video->name ?>
             </div>
@@ -53,6 +55,8 @@ $this->title = $video->name;
     ) ?>
 <?php } ?>
 <?php $this->registerJsFile('/js/category-slider.js') ?>
-<?php $this->registerJsFile('https://www.youtube.com/player_api') ?>
-<?php $this->registerJsFile('/js/player-youtube.js') ?>
+<?php if (Yii::$app->cookieConsentHelper->hasConsent('cookie_youtube')) { ?>
+    <?php $this->registerJsFile('https://www.youtube.com/player_api') ?>
+    <?php $this->registerJsFile('/js/player-youtube.js?v=1') ?>
+<?php } ?>
 <?php $this->registerJs('initSliders()') ?>

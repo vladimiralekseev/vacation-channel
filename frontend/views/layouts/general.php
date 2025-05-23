@@ -28,7 +28,9 @@ $this->beginPage() ?><!DOCTYPE html>
 <body>
 <?php $this->beginBody() ?>
 <?= $content ?>
+<?php if (Yii::$app->cookieConsentHelper->hasConsent('cookie_statistics')) { ?>
 <script src="https://r1.for-email.com/DM-3255854826-01/ddgtag.js"></script>
+<?php } ?>
 <?php $this->endBody() ?>
 </body>
 </html>

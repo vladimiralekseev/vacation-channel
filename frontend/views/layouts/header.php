@@ -4,6 +4,7 @@ use common\models\Category;
 use yii\helpers\Url;
 use yii\web\View;
 
+if (Yii::$app->cookieConsentHelper->hasConsent('cookie_statistics')) {
 $googleTagManagerIDs = Yii::$app->params['googleTagManager']['ids'] ?? [];
 if (YII_ENV === 'prod' && !empty($googleTagManagerIDs)) {
     $this->registerJsFile(
@@ -22,6 +23,7 @@ if (YII_ENV === 'prod' && !empty($googleTagManagerIDs)) {
     " . $gTagConfig,
         View::POS_HEAD
     );
+}
 }
 
 //if (YII_ENV === "prod") {

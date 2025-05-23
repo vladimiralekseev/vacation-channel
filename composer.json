@@ -34,7 +34,8 @@
         "ext-fileinfo": "*",
         "ext-curl": "*",
         "guzzlehttp/guzzle" : "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "dmstr/yii2-cookie-consent": "^1.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",

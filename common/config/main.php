@@ -1,5 +1,6 @@
 <?php
 
+use dmstr\cookieconsent\components\CookieConsentHelper;
 use webvimark\modules\UserManagement\UserManagementModule;
 
 return [
@@ -9,6 +10,9 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        'cookieConsentHelper' => [
+            'class' => CookieConsentHelper::class
+        ],
         'cache' => [
             'class' => \yii\caching\FileCache::class,
         ],

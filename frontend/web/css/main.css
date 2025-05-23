@@ -250,8 +250,8 @@ footer .contacts .lines:before {right:0;}
 
 .copyright {color:var(--c-gray);}
 
-.link-back {display:flex;color:var(--c-white);}
-.link-back .icon {margin:0 10px 0 0;top:-4px;}
+.link-back {display:flex;color:var(--c-white);padding:4px 0 0;}
+.link-back .icon {margin:0 10px 0 0;top:-4px;display:flex;}
 .link-back:hover {color:var(--c-turquoise);}
 .link-back:hover .icon, .link-back:hover .icon:before {border-color:var(--c-turquoise);color:var(--c-turquoise);}
 

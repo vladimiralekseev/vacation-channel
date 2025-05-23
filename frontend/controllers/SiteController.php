@@ -102,4 +102,9 @@ class SiteController extends BaseController
     {
         return $this->render('about');
     }
+
+    public function actionCookiesPolicy(): string
+    {
+        return $this->render('cookies/general');
+    }
 }

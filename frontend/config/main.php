@@ -64,6 +64,7 @@ return [
                 '/'                                   => 'site/index',
                 '/search-on-main'                     => 'site/search',
                 '/about'                              => 'site/about',
+                '/cookies-policy/'					  => 'site/cookies-policy',
                 '/programming'                        => 'programming/index',
                 '/schedule/show'                      => 'schedule/show',
                 '/schedule/show-print'                => 'schedule/show-print',
