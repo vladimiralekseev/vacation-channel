@@ -9,7 +9,7 @@ use yii\web\View;
 
 AppAsset::register($this);
 
-$this->title = str_replace('&nbsp;', ' ', $this->title);
+$this->title = str_replace('&nbsp;', ' ', $this->title ?? '');
 $this->beginPage() ?><!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" itemscope itemtype="http://schema.org/WebPage">
 <head>

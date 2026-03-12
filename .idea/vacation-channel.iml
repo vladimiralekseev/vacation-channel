@@ -69,6 +69,18 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tubalmartin/cssmin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dmstr/yii2-adminlte-asset" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rmrevin/yii2-fontawesome" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dmstr/yii2-cookie-consent" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/npm-asset/dmstr--cookie-consent" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-imagine" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-symfonymailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mihaildev/yii2-elfinder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/studio-42/elfinder" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
