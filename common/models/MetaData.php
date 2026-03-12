@@ -14,7 +14,7 @@ class MetaData extends _source_MetaData
     public const TYPE_LINK  = 'link';
     public const TYPE_TITLE = 'title';
 
-    public function rules()
+    public function rules(): array
     {
         return array_merge(parent::rules(), [
             [['url'], 'required'],

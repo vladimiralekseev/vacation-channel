@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 
 class MetaDataSearch extends MetaData
 {
-    public function rules()
+    public function rules(): array
     {
         return [];
     }

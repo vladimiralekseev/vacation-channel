@@ -21,7 +21,7 @@ class Video extends _source_Video
     public const MAIN_PAGE_NO = 0;
     public const MAIN_PAGE_YES = 1;
 
-    public function rules()
+    public function rules(): array
     {
         return array_merge(parent::rules(), [
             [['category_id'], 'required'],
