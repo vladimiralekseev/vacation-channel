@@ -24,6 +24,7 @@ $featured = (bool)array_filter($scheduleByDay, static function ($it) {
                 <div class="col-6"><img src="/img/logo.png" alt="Vacation Channel" /></div>
                 <div class="col-6 text-end fs-5">
                     <?= $type === BransonSchedule::TYPE_SHOW ? 'Show' : 'Attraction' ?> Schedules
+                    <button class="btn btn-primary btn-sm no-print" onclick="window.print()">Print</button>
                 </div>
             </div>
         </div>
