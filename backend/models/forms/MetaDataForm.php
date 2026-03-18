@@ -7,8 +7,8 @@ use yii\helpers\Json;
 
 class MetaDataForm extends MetaData
 {
-    public string|int|null $key;
-    public string|int|null $value;
+    public string|int|null $key = null;
+    public string|int|null $value = null;
 
     public function load($data, $formName = null): bool
     {
