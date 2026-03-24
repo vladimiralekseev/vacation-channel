@@ -7,15 +7,15 @@ use yii\helpers\Json;
 
 class MetaDataForm extends MetaData
 {
-    public string|int|null $key = null;
-    public string|int|null $value = null;
+    public string|int|array|null $key = [];
+    public string|int|array|null $value = [];
 
     public function load($data, $formName = null): bool
     {
         $load = parent::load($data, $formName);
 
-        $keys = $this->getAttributes(['key'])['key'] ?? [];
-        $values = $this->getAttributes(['value'])['value'] ?? [];
+        $keys = $this->key ?? [];
+        $values = $this->value ?? [];
         if (!empty($keys) && !empty($values)) {
             $data = array_combine($keys, $values);
             $data = array_filter(
